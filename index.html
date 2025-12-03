@@ -19,7 +19,7 @@
             border: 0.1rem solid #E7E7E7 !important;
             border-radius: 1.6rem !important;
             overflow: hidden;
-            margin-bottom: 1.6rem;
+            margin-bottom: 0.8rem;
         }
         .accordion-item:first-child {
             margin-top: 0;
@@ -54,6 +54,7 @@
             gap: 1.6rem;
             flex-wrap: wrap;
             width: 100%;
+            padding-right: 2rem;
         }
         .project-name {
             font-weight: 600;
@@ -123,10 +124,18 @@
         .project-detail-item {
             margin-bottom: 1.6rem;
         }
+        .project-detail-item:has(.actors-container) {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
         .project-detail-label {
             font-weight: 600;
             color: #7A7F83;
             margin-right: 0.8rem;
+        }
+        .project-detail-item:has(.actors-container) .project-detail-label {
+            margin-right: 0;
         }
         .project-detail-item span:not(.project-detail-label) {
             color: #111414;
@@ -142,6 +151,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.8rem;
+            align-items: center;
         }
         
         /* Header */
@@ -251,10 +261,6 @@
                 <span class="badge filter-badge bg-secondary" data-status="Não iniciado" data-filter-type="status">Não iniciado</span>
                 <span class="badge filter-badge bg-warning" data-status="On-hold" data-filter-type="status">On-hold</span>
                 <span class="badge filter-badge bg-info" data-status="Backlog" data-filter-type="status">Backlog</span>
-            </div>
-            
-            <div class="mt-2">
-                <button type="button" class="btn btn-secondary btn-sm" id="clearFilters">Limpar filtros</button>
             </div>
         </div>
 
@@ -1360,15 +1366,6 @@
             badge.addEventListener('click', function() {
                 handleStatusBadgeClick(this);
             });
-        });
-        
-        // Botão para limpar filtros
-        document.getElementById('clearFilters').addEventListener('click', function() {
-            selectedPMs = [];
-            selectedStatuses = [];
-            updateBadgeStates('pm');
-            updateBadgeStates('status');
-            filterProjects();
         });
     </script>
 </body>
