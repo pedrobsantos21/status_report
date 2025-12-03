@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Report - Coordenadoria do Observatório de Segurança no Trânsito</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .accordion-button:not(.collapsed) {
+            background-color: #f8f9fa;
+        }
+        .accordion-button {
+            display: flex;
+            align-items: center;
+        }
+        .status-badge {
+            font-size: 0.85rem !important;
+        }
+        .project-header {
+            display: flex;
+            align-items: flex-end;
+            gap: 1rem;
+            flex-wrap: wrap;
+            padding-right: 1.5rem;
+        }
+        .project-name {
+            font-weight: 600;
+            flex: 1;
+            min-width: 200px;
+            line-height: 1.5;
+        }
+        .project-meta {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-right: 1rem;
+        }
+        .project-meta .badge {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 0.85rem !important;
+            padding: 4px 8px !important;
+            line-height: 1 !important;
+            height: 24px !important;
+            min-height: 24px !important;
+            max-height: 24px !important;
+            box-sizing: border-box !important;
+            margin: 0 !important;
+            vertical-align: bottom !important;
+        }
+        .project-meta .status-badge,
+        .project-meta .pm-badge,
+        .project-meta .tag-badge {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 0.85rem !important;
+            padding: 4px 8px !important;
+            line-height: 1 !important;
+            height: 24px !important;
+            min-height: 24px !important;
+            max-height: 24px !important;
+            box-sizing: border-box !important;
+            margin: 0 !important;
+            vertical-align: bottom !important;
+        }
+        .project-detail-item {
+            margin-bottom: 0.75rem;
+        }
+        .project-detail-label {
+            font-weight: 600;
+            color: #495057;
+            margin-right: 0.5rem;
+        }
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #212529;
+        }
+        .tag-badge {
+            font-size: 0.85rem;
+            margin-right: 0.25rem;
+            margin-bottom: 0.25rem;
+        }
+        .pm-badge {
+            background-color: #6c757d;
+        }
+        .actor-badge {
+            background-color: #0d6efd;
+        }
+        .actors-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+        }
+        .filters-section {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .project-item-hidden {
+            display: none !important;
+        }
+        .filter-badge {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        .filter-badge:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+        .filter-badge.active {
+            opacity: 1;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .filter-badge:not(.active) {
+            opacity: 0.6;
+        }
+        .filter-group-title {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        .filter-badges-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <header class="mb-4">
+            <h1 class="display-4 mb-2">Status Report</h1>
+            <p class="text-muted">Coordenadoria do Observatório de Segurança no Trânsito</p>
+            <p class="text-muted small">Data de atualização: 03/12/2025</p>
+        </header>
+
+        <!-- Filtros -->
+        <div class="filters-section">
+            <div class="filter-group-title">Filtrar por Project Manager:</div>
+            <div class="filter-badges-container" id="pmFilters">
+                <span class="badge filter-badge pm-badge active" data-pm="" data-filter-type="pm">Todos</span>
+                <span class="badge filter-badge pm-badge" data-pm="dest" data-filter-type="pm">dest</span>
+                <span class="badge filter-badge pm-badge" data-pm="cost" data-filter-type="pm">cost</span>
+                <span class="badge filter-badge pm-badge" data-pm="cist" data-filter-type="pm">cist</span>
+                <span class="badge filter-badge pm-badge" data-pm="deseg" data-filter-type="pm">deseg</span>
+                <span class="badge filter-badge pm-badge" data-pm="drmlt" data-filter-type="pm">drmlt</span>
+                <span class="badge filter-badge pm-badge" data-pm="dseg" data-filter-type="pm">dseg</span>
+                <span class="badge filter-badge pm-badge" data-pm="cgsv" data-filter-type="pm">cgsv</span>
+            </div>
+            
+            <div class="filter-group-title">Filtrar por Status:</div>
+            <div class="filter-badges-container" id="statusFilters">
+                <span class="badge filter-badge bg-secondary active" data-status="" data-filter-type="status">Todos</span>
+                <span class="badge filter-badge bg-success" data-status="Em execução" data-filter-type="status">Em execução</span>
+                <span class="badge filter-badge bg-secondary" data-status="Não iniciado" data-filter-type="status">Não iniciado</span>
+                <span class="badge filter-badge bg-warning text-dark" data-status="On-hold" data-filter-type="status">On-hold</span>
+                <span class="badge filter-badge bg-info" data-status="Backlog" data-filter-type="status">Backlog</span>
+            </div>
+            
+            <div class="mt-2">
+                <button type="button" class="btn btn-secondary btn-sm" id="clearFilters">Limpar filtros</button>
+            </div>
+        </div>
+
+        <div class="accordion" id="projetosAccordion">
+            <!-- Aditivo do Infosiga 3.0 -->
+            <div class="accordion-item" data-pm="dest" data-status="Em execução">
+                <h2 class="accordion-header" id="heading1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                        <div class="project-header w-100">
+                            <span class="project-name">Aditivo do Infosiga 3.0</span>
+                            <div class="project-meta">
+                                <span class="badge bg-success status-badge">Em execução</span>
+                                <span class="badge pm-badge tag-badge">dest</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Descrição:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-success">Em execução</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">dest</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">bigrs</span>
+                                <span class="badge actor-badge tag-badge">tech-solutions</span>
+                                <span class="badge actor-badge tag-badge">aege</span>
+                                <span class="badge actor-badge tag-badge">dti</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span>14/08/2026</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>140.00201905/2023-12</span>
+                        </div>
+                        <div class="section-title">Documentos</div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POC com a Palantir -->
+            <div class="accordion-item" data-pm="cost" data-status="Em execução">
+                <h2 class="accordion-header" id="heading2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                        <div class="project-header w-100">
+                            <span class="project-name">POC com a Palantir</span>
+                            <div class="project-meta">
+                                <span class="badge bg-success status-badge">Em execução</span>
+                                <span class="badge pm-badge tag-badge">cost</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Descrição:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-success">Em execução</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">cost</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">dest</span>
+                                <span class="badge actor-badge tag-badge">drmlt</span>
+                                <span class="badge actor-badge tag-badge">deseg</span>
+                                <span class="badge actor-badge tag-badge">prodesp</span>
+                                <span class="badge actor-badge tag-badge">bigrs</span>
+                                <span class="badge actor-badge tag-badge">dti</span>
+                                <span class="badge actor-badge tag-badge">palantir</span>
+                                <span class="badge actor-badge tag-badge">volis</span>
+                                <span class="badge actor-badge tag-badge">aws</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span>16/12/2025</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>140.01201967/2025-78</span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RST - Registro de Sinistros de Trânsito -->
+            <div class="accordion-item" data-pm="cost" data-status="Em execução">
+                <h2 class="accordion-header" id="heading3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                        <div class="project-header w-100">
+                            <span class="project-name">RST - Registro de Sinistros de Trânsito</span>
+                            <div class="project-meta">
+                                <span class="badge bg-success status-badge">Em execução</span>
+                                <span class="badge pm-badge tag-badge">cost</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Descrição:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-success">Em execução</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">cost</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">dest</span>
+                                <span class="badge actor-badge tag-badge">bigrs</span>
+                                <span class="badge actor-badge tag-badge">prodesp</span>
+                                <span class="badge actor-badge tag-badge">google</span>
+                                <span class="badge actor-badge tag-badge">der</span>
+                                <span class="badge actor-badge tag-badge">dti</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span>26/02/2026</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>140.01192205/2025-73</span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plano de Segurança Viária do Estado de São Paulo -->
+            <div class="accordion-item" data-pm="cist" data-status="Em execução">
+                <h2 class="accordion-header" id="heading4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                        <div class="project-header w-100">
+                            <span class="project-name">Plano de Segurança Viária do Estado de São Paulo</span>
+                            <div class="project-meta">
+                                <span class="badge bg-success status-badge">Em execução</span>
+                                <span class="badge pm-badge tag-badge">cist</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Descrição:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-success">Em execução</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">cist</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">dest</span>
+                                <span class="badge actor-badge tag-badge">deseg</span>
+                                <span class="badge actor-badge tag-badge">drmlt</span>
+                                <span class="badge actor-badge tag-badge">bigrs</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span>Contínuo</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>-</span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Respeito à Vida -->
+            <div class="accordion-item" data-pm="cist" data-status="Não iniciado">
+                <h2 class="accordion-header" id="heading5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                        <div class="project-header w-100">
+                            <span class="project-name">Respeito à Vida</span>
+                            <div class="project-meta">
+                                <span class="badge bg-secondary status-badge">Não iniciado</span>
+                                <span class="badge pm-badge tag-badge">cist</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Descrição:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-secondary">Não iniciado</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">cist</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">drmlt</span>
+                                <span class="badge actor-badge tag-badge">bigrs</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span>Contínuo</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nota Técnica 03 -->
+            <div class="accordion-item" data-pm="deseg" data-status="Em execução">
+                <h2 class="accordion-header" id="heading6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                        <div class="project-header w-100">
+                            <span class="project-name">Nota Técnica 03</span>
+                            <div class="project-meta">
+                                <span class="badge bg-success status-badge">Em execução</span>
+                                <span class="badge pm-badge tag-badge">deseg</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Descrição:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-success">Em execução</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">deseg</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">drmlt</span>
+                                <span class="badge actor-badge tag-badge">dest</span>
+                                <span class="badge actor-badge tag-badge">dist</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>-</span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Caderno Técnico da Fiscalização -->
+            <div class="accordion-item" data-pm="deseg" data-status="Em execução">
+                <h2 class="accordion-header" id="heading7">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                        <div class="project-header w-100">
+                            <span class="project-name">Caderno Técnico da Fiscalização</span>
+                            <div class="project-meta">
+                                <span class="badge bg-success status-badge">Em execução</span>
+                                <span class="badge pm-badge tag-badge">deseg</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Descrição:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-success">Em execução</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">deseg</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">drmlt</span>
+                                <span class="badge actor-badge tag-badge">dft</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>-</span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subsídios para fiscalização -->
+            <div class="accordion-item" data-pm="deseg" data-status="Em execução">
+                <h2 class="accordion-header" id="heading8">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                        <div class="project-header w-100">
+                            <span class="project-name">Subsídios para fiscalização</span>
+                            <div class="project-meta">
+                                <span class="badge bg-success status-badge">Em execução</span>
+                                <span class="badge pm-badge tag-badge">deseg</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Descrição:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-success">Em execução</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">deseg</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">drmlt</span>
+                                <span class="badge actor-badge tag-badge">dft</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span>10/xx/xx</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>140.01279873/2025-12</span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anuário Estatístico do Infosiga -->
+            <div class="accordion-item" data-pm="cost" data-status="Não iniciado">
+                <h2 class="accordion-header" id="heading9">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                        <div class="project-header w-100">
+                            <span class="project-name">Anuário Estatístico do Infosiga</span>
+                            <div class="project-meta">
+                                <span class="badge bg-secondary status-badge">Não iniciado</span>
+                                <span class="badge pm-badge tag-badge">cost</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Descrição:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-secondary">Não iniciado</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">cost</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">drmlt</span>
+                                <span class="badge actor-badge tag-badge">deseg</span>
+                                <span class="badge actor-badge tag-badge">dest</span>
+                                <span class="badge actor-badge tag-badge">bigrs</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>-</span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Diagnóstico Municipal -->
+            <div class="accordion-item" data-pm="dest" data-status="Em execução">
+                <h2 class="accordion-header" id="heading10">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                        <div class="project-header w-100">
+                            <span class="project-name">Dashboard Diagnóstico Municipal</span>
+                            <div class="project-meta">
+                                <span class="badge bg-success status-badge">Em execução</span>
+                                <span class="badge pm-badge tag-badge">dest</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Descrição:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-success">Em execução</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">dest</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">cist</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>-</span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pnatrans -->
+            <div class="accordion-item" data-pm="drmlt" data-status="Em execução">
+                <h2 class="accordion-header" id="heading11">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                        <div class="project-header w-100">
+                            <span class="project-name">Pnatrans</span>
+                            <div class="project-meta">
+                                <span class="badge bg-success status-badge">Em execução</span>
+                                <span class="badge pm-badge tag-badge">drmlt</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Descrição:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-success">Em execução</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">drmlt</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">dft</span>
+                                <span class="badge actor-badge tag-badge">ept</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>-</span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gestão do Infosiga -->
+            <div class="accordion-item" data-pm="dest" data-status="Não iniciado">
+                <h2 class="accordion-header" id="heading12">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                        <div class="project-header w-100">
+                            <span class="project-name">Gestão do Infosiga</span>
+                            <div class="project-meta">
+                                <span class="badge bg-secondary status-badge">Não iniciado</span>
+                                <span class="badge pm-badge tag-badge">dest</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Descrição:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-secondary">Não iniciado</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">dest</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">bigrs</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>-</span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Convênio FGV -->
+            <div class="accordion-item" data-pm="deseg" data-status="On-hold">
+                <h2 class="accordion-header" id="heading13">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                        <div class="project-header w-100">
+                            <span class="project-name">Convênio FGV</span>
+                            <div class="project-meta">
+                                <span class="badge bg-warning status-badge">On-hold</span>
+                                <span class="badge pm-badge tag-badge">deseg</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Descrição:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-warning text-dark">On-hold</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">deseg</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">dest</span>
+                                <span class="badge actor-badge tag-badge">fgv</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>140.01233739/2025-67</span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Convênio EMDEC -->
+            <div class="accordion-item" data-pm="dest" data-status="Em execução">
+                <h2 class="accordion-header" id="heading14">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                        <div class="project-header w-100">
+                            <span class="project-name">Convênio EMDEC</span>
+                            <div class="project-meta">
+                                <span class="badge bg-success status-badge">Em execução</span>
+                                <span class="badge pm-badge tag-badge">dest</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Descrição:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-success">Em execução</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">dest</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">emdec</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>140.01233739/2025-67</span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Convênio com a SSP -->
+            <div class="accordion-item" data-pm="dest" data-status="Em execução">
+                <h2 class="accordion-header" id="heading15">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                        <div class="project-header w-100">
+                            <span class="project-name">Convênio com a SSP</span>
+                            <div class="project-meta">
+                                <span class="badge bg-success status-badge">Em execução</span>
+                                <span class="badge pm-badge tag-badge">dest</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Descrição:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-success">Em execução</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">dest</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">ssp</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>140.01238515/2025-41</span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Convênio com a CET-SP -->
+            <div class="accordion-item" data-pm="dest" data-status="Em execução">
+                <h2 class="accordion-header" id="heading16">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                        <div class="project-header w-100">
+                            <span class="project-name">Convênio com a CET-SP</span>
+                            <div class="project-meta">
+                                <span class="badge bg-success status-badge">Em execução</span>
+                                <span class="badge pm-badge tag-badge">dest</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="heading16" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-success">Em execução</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">dest</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">cet-sp</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>140.01191071/2025-73</span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Convênio Instituto Cordial -->
+            <div class="accordion-item" data-pm="dseg" data-status="Em execução">
+                <h2 class="accordion-header" id="heading17">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
+                        <div class="project-header w-100">
+                            <span class="project-name">Convênio Instituto Cordial</span>
+                            <div class="project-meta">
+                                <span class="badge bg-success status-badge">Em execução</span>
+                                <span class="badge pm-badge tag-badge">dseg</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="heading17" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-success">Em execução</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">dseg</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">dest</span>
+                                <span class="badge actor-badge tag-badge">instituto-cordial</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span>140.01191071/2025-73</span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso de Fiscalização -->
+            <div class="accordion-item" data-pm="cgsv" data-status="Em execução">
+                <h2 class="accordion-header" id="heading18">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse18" aria-expanded="false" aria-controls="collapse18">
+                        <div class="project-header w-100">
+                            <span class="project-name">Curso de Fiscalização</span>
+                            <div class="project-meta">
+                                <span class="badge bg-success status-badge">Em execução</span>
+                                <span class="badge pm-badge tag-badge">cgsv</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse18" class="accordion-collapse collapse" aria-labelledby="heading18" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-success">Em execução</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">cgsv</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container">
+                                <span class="badge actor-badge tag-badge">drmlt</span>
+                                <span class="badge actor-badge tag-badge">cist</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span></span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Análise de Séries Temporais de Sinistros -->
+            <div class="accordion-item" data-pm="dest" data-status="Backlog">
+                <h2 class="accordion-header" id="heading19">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse19" aria-expanded="false" aria-controls="collapse19">
+                        <div class="project-header w-100">
+                            <span class="project-name">Análise de Séries Temporais de Sinistros</span>
+                            <div class="project-meta">
+                                <span class="badge bg-info status-badge">Backlog</span>
+                                <span class="badge pm-badge tag-badge">dest</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse19" class="accordion-collapse collapse" aria-labelledby="heading19" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-info">Backlog</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">dest</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container"></div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span></span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benchmarking de Portais de Dados -->
+            <div class="accordion-item" data-pm="dest" data-status="Backlog">
+                <h2 class="accordion-header" id="heading20">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse20" aria-expanded="false" aria-controls="collapse20">
+                        <div class="project-header w-100">
+                            <span class="project-name">Benchmarking de Portais de Dados</span>
+                            <div class="project-meta">
+                                <span class="badge bg-info status-badge">Backlog</span>
+                                <span class="badge pm-badge tag-badge">dest</span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse20" class="accordion-collapse collapse" aria-labelledby="heading20" data-bs-parent="#projetosAccordion">
+                    <div class="accordion-body">
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Status:</span>
+                            <span class="badge bg-info">Backlog</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Project Manager:</span>
+                            <span class="badge pm-badge tag-badge">dest</span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Atores envolvidos:</span>
+                            <div class="actors-container"></div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Prazo:</span>
+                            <span></span>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="project-detail-label">Processo SEI:</span>
+                            <span></span>
+                        </div>
+                        <div class="section-title">Etapas</div>
+                        <div class="section-title">Riscos</div>
+                        <div class="section-title">Impedimentos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let selectedPMs = [];
+        let selectedStatuses = [];
+        
+        // Função para filtrar projetos
+        function filterProjects() {
+            const projectItems = document.querySelectorAll('.accordion-item');
+            
+            projectItems.forEach(item => {
+                const pm = item.getAttribute('data-pm');
+                const status = item.getAttribute('data-status');
+                
+                let showItem = true;
+                
+                // Filtrar por PM - mostrar se não há filtros ou se o PM está na lista selecionada
+                if (selectedPMs.length > 0 && !selectedPMs.includes(pm)) {
+                    showItem = false;
+                }
+                
+                // Filtrar por Status - mostrar se não há filtros ou se o Status está na lista selecionada
+                if (selectedStatuses.length > 0 && !selectedStatuses.includes(status)) {
+                    showItem = false;
+                }
+                
+                // Mostrar ou esconder o item
+                if (showItem) {
+                    item.classList.remove('project-item-hidden');
+                    item.style.display = '';
+                } else {
+                    item.classList.add('project-item-hidden');
+                    item.style.display = 'none';
+                    // Fechar accordion se estiver aberto
+                    const collapse = item.querySelector('.accordion-collapse');
+                    if (collapse && collapse.classList.contains('show')) {
+                        const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+                        if (bsCollapse) {
+                            bsCollapse.hide();
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Função para atualizar estado visual dos badges
+        function updateBadgeStates(filterType) {
+            const badges = document.querySelectorAll(`[data-filter-type="${filterType}"]`);
+            badges.forEach(badge => {
+                badge.classList.remove('active');
+            });
+            
+            if (filterType === 'pm') {
+                selectedPMs.forEach(pm => {
+                    const activeBadge = document.querySelector(`[data-filter-type="pm"][data-pm="${pm}"]`);
+                    if (activeBadge) {
+                        activeBadge.classList.add('active');
+                    }
+                });
+            } else if (filterType === 'status') {
+                selectedStatuses.forEach(status => {
+                    const activeBadge = document.querySelector(`[data-filter-type="status"][data-status="${status}"]`);
+                    if (activeBadge) {
+                        activeBadge.classList.add('active');
+                    }
+                });
+            }
+        }
+        
+        // Função para lidar com clique em badge de PM
+        function handlePMBadgeClick(badge) {
+            const pm = badge.getAttribute('data-pm');
+            
+            if (pm === '') {
+                // Se clicou em "Todos", limpar todas as seleções
+                selectedPMs = [];
+            } else {
+                // Se "Todos" estava selecionado, remover
+                if (selectedPMs.length === 0) {
+                    // Se não há seleções, adicionar esta
+                    selectedPMs.push(pm);
+                } else {
+                    // Toggle: se já está selecionado, remover; se não, adicionar
+                    const index = selectedPMs.indexOf(pm);
+                    if (index > -1) {
+                        selectedPMs.splice(index, 1);
+                    } else {
+                        selectedPMs.push(pm);
+                    }
+                }
+            }
+            
+            updateBadgeStates('pm');
+            filterProjects();
+        }
+        
+        // Função para lidar com clique em badge de Status
+        function handleStatusBadgeClick(badge) {
+            const status = badge.getAttribute('data-status');
+            
+            if (status === '') {
+                // Se clicou em "Todos", limpar todas as seleções
+                selectedStatuses = [];
+            } else {
+                // Se "Todos" estava selecionado, remover
+                if (selectedStatuses.length === 0) {
+                    // Se não há seleções, adicionar esta
+                    selectedStatuses.push(status);
+                } else {
+                    // Toggle: se já está selecionado, remover; se não, adicionar
+                    const index = selectedStatuses.indexOf(status);
+                    if (index > -1) {
+                        selectedStatuses.splice(index, 1);
+                    } else {
+                        selectedStatuses.push(status);
+                    }
+                }
+            }
+            
+            updateBadgeStates('status');
+            filterProjects();
+        }
+        
+        // Event listeners para badges de PM
+        document.querySelectorAll('[data-filter-type="pm"]').forEach(badge => {
+            badge.addEventListener('click', function() {
+                handlePMBadgeClick(this);
+            });
+        });
+        
+        // Event listeners para badges de Status
+        document.querySelectorAll('[data-filter-type="status"]').forEach(badge => {
+            badge.addEventListener('click', function() {
+                handleStatusBadgeClick(this);
+            });
+        });
+        
+        // Botão para limpar filtros
+        document.getElementById('clearFilters').addEventListener('click', function() {
+            selectedPMs = [];
+            selectedStatuses = [];
+            updateBadgeStates('pm');
+            updateBadgeStates('status');
+            filterProjects();
+        });
+    </script>
+</body>
+</html>
