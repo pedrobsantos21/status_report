@@ -1,4 +1,4 @@
-Data de atualização: 03/12/2025
+Data de atualização: 08/12/2025
 ## [[Aditivo do Infosiga 3.0]]
 
 Descrição: Continuidade do contrato com a Tech Solutions, visando a prestação de serviços de desenvolvimento e operação assistida para evolução do Infosiga.
@@ -16,22 +16,10 @@ Processo SEI: 140.00201905/2023-12
 
 ### Etapas
 
-#### Marco 1 - Tabulação e Integração de Dados
-
-- Duração: 25/09/2025 a 13/02/2026
-- Progresso: 71%
-#### Marco 2 - Georreferenciamento e Funcionalidades de Mapas
-
-- Duração: 25/09/2025 a 23/01/2026
-- Progresso: 41%
-#### Marco 3 - Front-end, Usabilidade e Segurança
-
-- Duração: 19/02/2026 a 22/05/2026
-- Progresso: 10%
-#### Marco 4 - Integração de Dados Externos e Inteligência Analítica
-
-- Duração: 25/02/2026 a 19/07/2026
-- Progresso: 0%
+- [13/02/2026] Marco 1 - Tabulação e Integração de Dados (progresso 71%)
+- [23/01/2026] Marco 2 - Georreferenciamento e Funcionalidades de Mapas (progresso 41%)
+- [22/05/2026] Marco 3 - Front-end, Usabilidade e Segurança (progresso 10%)
+- [19/07/2026] Marco 4 - Integração de Dados Externos e Inteligência Analítica (progresso 0%)
 ## [[POC com a Palantir]]
 
 Descrição: Prova de Conceito de solução de processamento e inteligência de dados com base nos dados do Infosiga e outras bases correlatas, com objetivo de apoiar na gestão da segurança no Trânsito
@@ -50,6 +38,7 @@ Processo SEI: 140.01201967/2025-78
 ### Etapas
 
 - [04/12/2025] Primeira validação
+- [08/12/2025] Reunião de checkpoint
 - [11/12/2025] Desenvolvimento e feedbacks
 - [15/12/2025] Ajustes finais
 - [16/12/2025] Apresentação final
@@ -77,7 +66,8 @@ Processo SEI: 140.01192205/2025-73
 - [04/11/2025] Reunião de trabalho - definição de campos e regras de negócio
 - [06/11/2025] Reunião de trabalho - definição de campos e regras de negócio
 - [01/12/2025] Reunião de trabalho - definição de campos e regras de negócio
-- [05/12/2025] Apresentação do RST à SSP
+- [05/12/2025] Apresentação do RST à SSP-SP
+- [10/12/2025] Reunião com atores da SSP-SP - Elaboração da Matriz CSD
 
 ## [[Plano de Segurança Viária do Estado de São Paulo]]
 
@@ -111,7 +101,7 @@ Atores envolvidos: #bigrs #dest #cist
 ### Etapas
 
 - [05/12/2025] Reunião com a área de negócio (CIST)
-- [19/12/2025] Criação do procedimento operacional padrão de monitoramento do RaV
+- [19/12/2025] Criação do procedimento operacional padrão de monitoramento dos dados do RaV
 
 ## [[Nota Técnica 03 - Impactos hospitalares dos sinistros no estado de São Paulo]]
 
@@ -228,7 +218,7 @@ Atores envolvidos: #dft #ept
 
 Descrição: Gestão rotineira do Infosiga, incluindo o registro e solução de issues, tabulação, auditoria e fechamento mensal dos dados.
 
-Status: Em andamento
+Status: Em execução
 Prazo: Release todo dia 15
 Project Manager: #dest
 Atores envolvidos: #bigrs
