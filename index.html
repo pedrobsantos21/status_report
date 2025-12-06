@@ -1504,6 +1504,81 @@
                 behavior: 'smooth'
             });
         });
+        
+        // Função para ordenar projetos por prazo
+        function sortProjectsByDeadline() {
+            const accordion = document.getElementById('projetosAccordion');
+            const projects = Array.from(accordion.querySelectorAll('.accordion-item'));
+            
+            // Função para extrair data do prazo
+            function getDeadlineDate(project) {
+                // Encontrar o elemento com label "Prazo:"
+                const detailItems = project.querySelectorAll('.project-detail-item');
+                let prazoText = null;
+                
+                for (let item of detailItems) {
+                    const label = item.querySelector('.project-detail-label');
+                    if (label && label.textContent.trim() === 'Prazo:') {
+                        const valueSpan = item.querySelector('span:not(.project-detail-label)');
+                        if (valueSpan) {
+                            prazoText = valueSpan.textContent.trim();
+                            break;
+                        }
+                    }
+                }
+                
+                if (!prazoText) return null;
+                
+                // Tentar extrair data no formato DD/MM/YYYY
+                const dateMatch = prazoText.match(/(\d{2})\/(\d{2})\/(\d{4})/);
+                if (dateMatch) {
+                    const [, day, month, year] = dateMatch;
+                    return new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+                }
+                
+                // Se não tem data, retornar um objeto com sortKey
+                if (prazoText === 'Contínuo') {
+                    return { sortKey: 1, text: prazoText };
+                } else if (prazoText === '-') {
+                    return { sortKey: 3, text: prazoText };
+                } else {
+                    return { sortKey: 2, text: prazoText };
+                }
+            }
+            
+            // Ordenar projetos
+            projects.sort((a, b) => {
+                const dateA = getDeadlineDate(a);
+                const dateB = getDeadlineDate(b);
+                
+                // Se ambos têm datas, comparar datas
+                if (dateA instanceof Date && dateB instanceof Date) {
+                    return dateA - dateB;
+                }
+                
+                // Se apenas A tem data, A vem primeiro
+                if (dateA instanceof Date) return -1;
+                if (dateB instanceof Date) return 1;
+                
+                // Se nenhum tem data, ordenar por sortKey
+                if (dateA && dateB && dateA.sortKey !== undefined && dateB.sortKey !== undefined) {
+                    if (dateA.sortKey !== dateB.sortKey) {
+                        return dateA.sortKey - dateB.sortKey;
+                    }
+                    return dateA.text.localeCompare(dateB.text);
+                }
+                
+                return 0;
+            });
+            
+            // Reordenar no DOM
+            projects.forEach(project => accordion.appendChild(project));
+        }
+        
+        // Ordenar projetos quando a página carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            sortProjectsByDeadline();
+        });
     </script>
 </body>
 </html>
