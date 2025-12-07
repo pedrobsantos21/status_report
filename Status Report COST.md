@@ -301,3 +301,14 @@ Status: Em execução
 Prazo: 12/12/2025
 Project Manager: #cgsv
 Atores envolvidos: #drmlt #cist #bigrs #dft
+
+## [[Infosiga 4.0]]
+
+Status: Não iniciado
+Prazo: -
+Project Manager: #dest 
+Atores envolvidos: #drmlt #deseg #bigrs 
+
+### Documentos
+
+- [Termo de referência](https://docs.google.com/document/d/1saMvEucoMunvNbKezWGeDhFDK64xiZ3E/edit?usp=sharing&ouid=115524721872365693222&rtpof=true&sd=true)
