@@ -174,13 +174,41 @@
             color: #7A7F83;
         }
         
+        /* Cards container */
+        .cards-container {
+            margin-bottom: 3.2rem;
+        }
+        
         /* Filters section */
         .filters-section {
             background-color: #F9F9F9;
             padding: 2.4rem;
             border-radius: 1.6rem;
-            margin-bottom: 3.2rem;
+            margin-bottom: 2.4rem;
             border: 0.1rem solid #E7E7E7;
+        }
+        
+        /* Allocation card section */
+        .allocation-card {
+            background-color: #F9F9F9;
+            padding: 2.4rem;
+            border-radius: 1.6rem;
+            border: 0.1rem solid #E7E7E7;
+        }
+        .allocation-card-title {
+            font-weight: 600;
+            margin-bottom: 1.6rem;
+            color: #111414;
+            font-size: 0.95rem;
+        }
+        .allocation-card .badge {
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .allocation-card .badge:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+            text-decoration: none;
         }
         .filter-group-title {
             font-weight: 600;
@@ -382,25 +410,38 @@
             <p class="text-muted small">Data de atualização: 08/12/2025</p>
         </header>
 
-        <!-- Filtros -->
-        <div class="filters-section">
-            <div class="filter-group-title">Filtrar por Project Manager:</div>
-            <div class="filter-badges-container" id="pmFilters">
-                <span class="badge filter-badge pm-badge active" data-pm="" data-filter-type="pm">Todos</span>
-                <span class="badge filter-badge pm-badge" data-pm="dest" data-filter-type="pm">dest</span>
-                <span class="badge filter-badge pm-badge" data-pm="cost" data-filter-type="pm">cost</span>
-                <span class="badge filter-badge pm-badge" data-pm="deseg" data-filter-type="pm">deseg</span>
-                <span class="badge filter-badge pm-badge" data-pm="drmlt" data-filter-type="pm">drmlt</span>
-                <span class="badge filter-badge pm-badge" data-pm="cgsv" data-filter-type="pm">cgsv</span>
+        <!-- Cards Container -->
+        <div class="cards-container">
+            <!-- Filtros -->
+            <div class="filters-section">
+                <div class="filter-group-title">Filtrar por Project Manager:</div>
+                <div class="filter-badges-container" id="pmFilters">
+                    <span class="badge filter-badge pm-badge active" data-pm="" data-filter-type="pm">Todos</span>
+                    <span class="badge filter-badge pm-badge" data-pm="dest" data-filter-type="pm">dest</span>
+                    <span class="badge filter-badge pm-badge" data-pm="cost" data-filter-type="pm">cost</span>
+                    <span class="badge filter-badge pm-badge" data-pm="deseg" data-filter-type="pm">deseg</span>
+                    <span class="badge filter-badge pm-badge" data-pm="drmlt" data-filter-type="pm">drmlt</span>
+                    <span class="badge filter-badge pm-badge" data-pm="cgsv" data-filter-type="pm">cgsv</span>
+                </div>
+                
+                <div class="filter-group-title">Filtrar por Status:</div>
+                <div class="filter-badges-container" id="statusFilters">
+                    <span class="badge filter-badge bg-secondary active" data-status="" data-filter-type="status">Todos</span>
+                    <span class="badge filter-badge bg-success" data-status="Em execução" data-filter-type="status">Em execução</span>
+                    <span class="badge filter-badge bg-secondary" data-status="Não iniciado" data-filter-type="status">Não iniciado</span>
+                    <span class="badge filter-badge bg-warning" data-status="On-hold" data-filter-type="status">On-hold</span>
+                    <span class="badge filter-badge bg-info" data-status="Finalizado" data-filter-type="status">Finalizado</span>
+                </div>
             </div>
-            
-            <div class="filter-group-title">Filtrar por Status:</div>
-            <div class="filter-badges-container" id="statusFilters">
-                <span class="badge filter-badge bg-secondary active" data-status="" data-filter-type="status">Todos</span>
-                <span class="badge filter-badge bg-success" data-status="Em execução" data-filter-type="status">Em execução</span>
-                <span class="badge filter-badge bg-secondary" data-status="Não iniciado" data-filter-type="status">Não iniciado</span>
-                <span class="badge filter-badge bg-warning" data-status="On-hold" data-filter-type="status">On-hold</span>
-                <span class="badge filter-badge bg-info" data-status="Finalizado" data-filter-type="status">Finalizado</span>
+
+            <!-- Alocação das equipes -->
+            <div class="allocation-card">
+                <div class="allocation-card-title">Alocação das equipes:</div>
+                <div class="filter-badges-container">
+                    <a href="https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/00%20Administrativo/00.00%20Gest%C3%A3o%20Interna/COST_DSEG_Planejamento.xlsx?d=wd27a80b68d25438d97b210a4debda871&csf=1&web=1&e=brBIro" target="_blank" class="badge pm-badge tag-badge">DESEG</a>
+                    <a href="https://governosp.sharepoint.com/:x:/t/DETRAN-CoordenadoriadeSeguranaViria/EYIpQfmOU0tIrpvt9WAxIlwBhmxwZq9RRKHsl3BEUevKGQ?e=VpB2qc" target="_blank" class="badge pm-badge tag-badge">DEST</a>
+                    <a href="https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/0.%20Administrativo/2.%20Gest%C3%A3o%20Equipe/COST_DRMLT_Planejamento.xlsx?d=wc11fa55e5a29423a978c5d38c2a39670&csf=1&web=1&e=4eJL9D" target="_blank" class="badge pm-badge tag-badge">DRMLT</a>
+                </div>
             </div>
         </div>
 
