@@ -108,7 +108,7 @@ Atores envolvidos: #bigrs #dest #cist
 Descrição: Investigação do impactos dos sinistros de trânsito na carga hospitalar do Estado de São Paulo entre 2015 e 2024, considerando custos, permanência hospitalar e desfechos de mortalidade.
 
 Status: Em execução
-Prazo: 26/01/2025
+Prazo: 26/01/2026
 Project Manager: #deseg 
 Atores envolvidos: #drmlt #dest
 
@@ -184,35 +184,44 @@ Atores envolvidos: #drmlt #deseg #dest #bigrs
 
 Descrição: Painel com os resultados do questionário de diagnóstico municipal, elaborado com o PowerBI.
 
-Status: Finalizado
-Prazo: 05/12/2025
+Status: Em execução
+Prazo: 18/12/2025
 Project Manager: #dest 
 Atores envolvidos: #cist #dti
 
 ### Documentos
 
-- [Dashboard]()
+- [Lista de perguntas](Dashboard do diagnóstico municipal: https://app.powerbi.com/Redirect?action=OpenReport&appId=44e8b92a-0f2d-410a-ad47-d6b272aac3e6&reportObjectId=ed6272f2-4e58-4bb5-84af-34b6e9e5385b&ctid=3a78b0cd-7c8e-4929-83d5-190a6cc01365&reportPage=1088d0f02b816ba491ec&pbi_source=appShareLink&portalSessionId=3e434289-2927-4339-bb0a-5a985475d2d8)
+- [Dashboard](https://app.powerbi.com/Redirect?action=OpenReport&appId=44e8b92a-0f2d-410a-ad47-d6b272aac3e6&reportObjectId=ed6272f2-4e58-4bb5-84af-34b6e9e5385b&ctid=3a78b0cd-7c8e-4929-83d5-190a6cc01365&reportPage=6f2ceefa1e5fcf875be5&pbi_source=appShareLink&portalSessionId=0fc0dfcf-605b-4273-a293-f73c6c520e8b)
 
 ### Etapas
 
 - [04/12/2025] Finalização do Dashboard
-- [05/12/2025] Publicação do Dashboard
+- [05/12/2025] Publicação do Dashboard V01
+- [18/12/2025] Publicação do Dashboard V02
 ## [[Gestão do Pnatrans]]
 
 Descrição: Coleta, acompanhamento e submissão de produtos de responsabilidade do Detran-SP ao Painel Pnatrans.
 
 Status: Em execução
-Prazo: 19/12/2025 (trimestral)
+Prazo: 09/01/2025 (trimestral)
 Project Manager: #drmlt
-Atores envolvidos: #dft #ept
+Atores envolvidos: #dft #ept #dva #ascom
 ### Documentos
 
 - [Pasta do projeto](https://governosp.sharepoint.com/:f:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/3.%20Produ%C3%A7%C3%A3o/2.%20Pnatrans?csf=1&web=1&e=7iiKgx)
-- [Relatório primeira submissão](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/3.%20Produ%C3%A7%C3%A3o/2.%20Pnatrans/3.%20Produ%C3%A7%C3%A3o/5.%20Relat%C3%B3rios%20de%20Entregas/Relat%C3%B3rio%20SEI%20-%201%C2%AA%20Remessa/Relat%C3%B3rio%20Pnatrans%201%C2%AA%20Remessa%202025%20v0.0.docx?d=w5469a97fa7894976bca8548c97e87d2c&csf=1&web=1&e=ocwAAj)
+- [Relatório primeira submissão](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/3.%20Produ%C3%A7%C3%A3o/2.%20Pnatrans/3.%20Produ%C3%A7%C3%A3o/5.%20Relat%C3%B3rios%20de%20Entregas/Relat%C3%B3rio%20SEI%20-%201%C2%AA%20Remessa/Relat%C3%B3rio%20Pnatrans%201%C2%AA%20Remessa%202025%20v0.0.pdf?csf=1&web=1&e=u9RxPj)
+- [Relatório do Prêmio Senatran](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/3.%20Produ%C3%A7%C3%A3o/2.%20Pnatrans/3.%20Produ%C3%A7%C3%A3o/7.%20Pr%C3%AAmio%20SENATRAN%202025/Relat%C3%B3rio%20do%20Pr%C3%AAmio%20SENATRAN%202025.pdf?csf=1&web=1&e=PnyN3Q)
 - [Monitoramento dos produtos do Detran-SP](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/3.%20Produ%C3%A7%C3%A3o/2.%20Pnatrans/3.%20Produ%C3%A7%C3%A3o/9.%20Monitoramento%20Produtos%20Detran/COST_DRMLT_Resumo%20Produtos%20Detran%20v.0.0.docx?d=wb3bb59904f1746268ba05a1a224bbb18&csf=1&web=1&e=HZrkUO)
 ### Etapas
 
-- [19/12/2025] Segunda rodada de submissão de produtos
+- [01/08/2025] Início da coleta de informações com outras áreas do Detran-SP
+- [26/08/2025] Recebimento do ofício da Senatran na mesa da DSV (Processo SEI 140.01106273/2025-28)
+- [28/08/2025] Fim da coleta de informações com outras áreas do Detran-SP
+- [29/08/2025] 1ª Submissão de produtos ao Painel Pnatrans
+- [15/09/2025] Submissão complementar
+- [31/10/2025] Resposta da DSV ao ofício da Senatran (Processo SEI 140.01106273/2025-28)
+- [09/01/2026] Segunda rodada de submissão de produtos
 
 ## [[Gestão do Infosiga]]
 
