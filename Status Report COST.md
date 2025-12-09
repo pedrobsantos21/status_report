@@ -1,4 +1,4 @@
-Data de atualização: 08/12/2025
+Data de atualização: 09/12/2025
 ## [[Aditivo do Infosiga 3.0]]
 
 Descrição: Continuidade do contrato com a Tech Solutions, visando a prestação de serviços de desenvolvimento e operação assistida para evolução do Infosiga.
@@ -101,7 +101,7 @@ Atores envolvidos: #bigrs #dest #cist
 ### Etapas
 
 - [05/12/2025] Reunião com a área de negócio (CIST)
-- [19/12/2025] Criação do procedimento operacional padrão de monitoramento dos dados do RaV
+- [26/01/2025] Criação do procedimento operacional padrão de monitoramento dos dados do RaV
 
 ## [[Nota Técnica 03 - Impactos hospitalares dos sinistros no estado de São Paulo]]
 
