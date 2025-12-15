@@ -1843,19 +1843,33 @@
             });
             
             if (filterType === 'pm') {
-                selectedPMs.forEach(pm => {
-                    const activeBadge = document.querySelector(`[data-filter-type="pm"][data-pm="${pm}"]`);
-                    if (activeBadge) {
-                        activeBadge.classList.add('active');
+                if (selectedPMs.length === 0) {
+                    const todosBadge = document.querySelector(`[data-filter-type="pm"][data-pm=""]`);
+                    if (todosBadge) {
+                        todosBadge.classList.add('active');
                     }
-                });
+                } else {
+                    selectedPMs.forEach(pm => {
+                        const activeBadge = document.querySelector(`[data-filter-type="pm"][data-pm="${pm}"]`);
+                        if (activeBadge) {
+                            activeBadge.classList.add('active');
+                        }
+                    });
+                }
             } else if (filterType === 'status') {
-                selectedStatuses.forEach(status => {
-                    const activeBadge = document.querySelector(`[data-filter-type="status"][data-status="${status}"]`);
-                    if (activeBadge) {
-                        activeBadge.classList.add('active');
+                if (selectedStatuses.length === 0) {
+                    const todosBadge = document.querySelector(`[data-filter-type="status"][data-status=""]`);
+                    if (todosBadge) {
+                        todosBadge.classList.add('active');
                     }
-                });
+                } else {
+                    selectedStatuses.forEach(status => {
+                        const activeBadge = document.querySelector(`[data-filter-type="status"][data-status="${status}"]`);
+                        if (activeBadge) {
+                            activeBadge.classList.add('active');
+                        }
+                    });
+                }
             }
         }
         
