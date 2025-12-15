@@ -1,4 +1,4 @@
-Data de atualização: 09/12/2025
+Data de atualização: 15/12/2025
 ## [[Aditivo do Infosiga 3.0]]
 
 Descrição: Continuidade do contrato com a Tech Solutions, visando a prestação de serviços de desenvolvimento e operação assistida para evolução do Infosiga.
@@ -56,7 +56,7 @@ Processo SEI: 140.01192205/2025-73
 ### Documentos
 
 - [Figma do projeto](https://www.figma.com/proto/zDlnJGYq3fCHGPfRh6o6iG/%F0%9F%9F%A1--RST---Registro-de-Sinistros-de-Tr%C3%A2nsito?node-id=55738-19962&t=jvwLitaSJGzipXLs-1&starting-point-node-id=55738%3A19962)
-- [Regras de negócio - Veículos e Pessoas]([Revisão Regras de Negócio - Pessoas e Veículos v001.docx](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Tecnologia%20da%20informa%C3%A7%C3%A3o/APP-RST/Revis%C3%A3o%20Regras%20de%20Neg%C3%B3cio%20-%20Pessoas%20e%20Ve%C3%ADculos%20v001.docx?d=wdca0a30f7bbd4519954c0df5cffd8f62&csf=1&web=1&e=qPuu5d))
+- [Revisão Regras de Negócio - Pessoas e Veículos](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Tecnologia%20da%20informa%C3%A7%C3%A3o/APP-RST/Revis%C3%A3o%20Regras%20de%20Neg%C3%B3cio%20-%20Pessoas%20e%20Ve%C3%ADculos%20v001.docx?d=wdca0a30f7bbd4519954c0df5cffd8f62&csf=1&web=1&e=qPuu5d)
 ### Etapas
 
 - [06/10/2025] Elaboração da Matriz CSD com a equipe do Detran-SP
@@ -85,7 +85,7 @@ Atores envolvidos: #dest #deseg #drmlt #bigrs #cist
 
 - [19/12/2025] Criação do procedimento operacional padrão para o monitoramento de indicadores de desempenho e produtos do PSV-SP 
 
-## [[Respeito à Vida]]
+## [[PRaVida]]
 
 Descrição: Coleta, integração e monitoramento de dados relacionados às intervenções dentro do âmbito do Respeito à Vida
 
@@ -97,10 +97,12 @@ Atores envolvidos: #bigrs #dest #cist
 ### Documentos
 
 - [Fluxograma do processo](https://governosp.sharepoint.com/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20Projeto%20Estrat%C3%A9gico%20-%20Respeito%20%C3%A0%20Vida/2.%20Produ%C3%A7%C3%A3o/Modelagem%20Novo%20Respeito%20%C3%A0%20Vida%20v2.0/1.%20Fluxogramas/CGSV-RAV_Fluxograma%20-%20RaV_7.0.pdf)
-
+- [Cronograma PRaVida 1.0](https://governosp.sharepoint.com/:b:/t/DETRAN-CoordenadoriadeSeguranaViria/IQAq1c5XrfX-SanqIRwJm9elAacGfNVniEfgV66rcfbIslc?e=NpbV1v)
 ### Etapas
 
 - [05/12/2025] Reunião com a área de negócio (CIST)
+- [11/12/2025] Desenho do fluxo de dados da primeira etapa do PRaVida
+- [15/12/2025] Publicação do edital
 - [26/01/2025] Criação do procedimento operacional padrão de monitoramento dos dados do RaV
 
 ## [[Nota Técnica 03 - Impactos hospitalares dos sinistros no estado de São Paulo]]
@@ -125,13 +127,16 @@ Atores envolvidos: #drmlt #dest
 Descrição: A partir da decisão da DFT de dar a ordem de serviço para as operações mensalmente, a DESEG está amadurecendo a metodologia de priorização de locais de risco e aprimorá-la com outras bases de dados e orientações operacionais. Para isso, como marco final desse processo, será consolidado um Caderno Técnico - documento interno com a descrição do método a ser utilizado.
 
 Status: Em execução
-Prazo: 12/12/2025
+Prazo: 17/12/2025
 Project Manager: #deseg 
 Atores envolvidos: #drmlt #dft 
 
 ### Documentos
 
 - [Apêndice I - Mapa dinâmico dos critérios de alocação](https://governosp.sharepoint.com/:u:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.07%20Fiscaliza%C3%A7%C3%A3o/02.07.05%20Caderno%20T%C3%A9cnico/Ap%C3%AAndice%20I%20-%20Mapa%20din%C3%A2mico%20dos%20crit%C3%A9rios%20de%20aloca%C3%A7%C3%A3o.html?csf=1&web=1&e=5Qur7O)
+- [CT01 - v0.2](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.07%20Fiscaliza%C3%A7%C3%A3o/02.07.05%20Caderno%20T%C3%A9cnico/Vers%C3%B5es/DESEG_CT01_v0.2.pdf?csf=1&web=1&e=ZS6HrW)
+- [CT01 - v0.3](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.07%20Fiscaliza%C3%A7%C3%A3o/02.07.05%20Caderno%20T%C3%A9cnico/Vers%C3%B5es/DESEG_CT01_v0.3.pdf?csf=1&web=1&e=8BSkBq)
+- [CT01 - v0.4](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.07%20Fiscaliza%C3%A7%C3%A3o/02.07.05%20Caderno%20T%C3%A9cnico/Vers%C3%B5es/DESEG_CT01_v0.4.pdf?csf=1&web=1&e=E02oJR)
 ### Etapas
 
 - [13/10/2025] Diagnóstico de ações
@@ -144,7 +149,7 @@ Atores envolvidos: #drmlt #dft
 Descrição: Análise de dados de sinistros e das operações de fiscalização como subsídio à DFT para planejar o policiamento ostensivo do trânsito no estado.
 
 Status: Em execução
-Prazo: Todo dia 10
+Prazo: -
 Project Manager: #deseg 
 Atores envolvidos: #drmlt #dft
 
@@ -154,8 +159,7 @@ Processo SEI: 140.01279873/2025-12
 - [Entrega de novembro / 2025](https://governosp.sharepoint.com/:f:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.07%20Fiscaliza%C3%A7%C3%A3o/02.07.06%20Entregas%20mensais/Novembro?csf=1&web=1&e=BsUf2P)
 ### Etapas
 
-- [Dia 5] Finalização do material
-- [Dia 10] Envio do material pelo processo SEI
+- [17/12/2025] Reunião de alinhamento com a CFT
 ## [[Anuário Estatístico do Infosiga]]
 
 Descrição: Publicação com periodicidade anual, compilando dados de sinistros e óbitos no estado de São Paulo. 
@@ -168,6 +172,7 @@ Atores envolvidos: #drmlt #deseg #dest #bigrs
 
 - [Canvas do projeto](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST/08%20Anu%C3%A1rio%20Infosiga/DSEG_CanvasPesquisas_v2.0.pdf?csf=1&web=1&e=YWxcBn)
 - [Cronograma](https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.04%20Infosiga.SP/02.04.03%20Anu%C3%A1rio/COST_Anuario_Kickoff.xlsx?d=w5274ff4eb93b4741ab60c818b9316a33&csf=1&web=1&e=CEV71M)
+- [Controle de produção do conteúdo](https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.04%20Infosiga.SP/02.04.03%20Anu%C3%A1rio/2%20Processamento/COST_Anuario_Conteudo.xlsx?d=w894d7ec3dac842048317e98bea5f936a&csf=1&web=1&e=doqQEz)
 ### Etapas
 
 - [05/12/2025] Reunião de escopo com atores táticos.
@@ -235,13 +240,20 @@ Atores envolvidos: #bigrs
 ### Documentos
 
 - [Painel de issues](https://github.com/detran-sp/infosiga/issues)
-- [Mapeamento de processos](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Infosiga/Fluxograma_Detalhado/fluxograma_infosiga/Relat%C3%B3rio%20Descritivo%20Fluxo%20Infosiga%20v1.0.docx?d=w86aef844c91c4a46bdc9e395974cc312&csf=1&web=1&e=YuCiqk)
+- [Mapeamento de processos v1.0](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Infosiga/Fluxograma_Detalhado/fluxograma_infosiga/Relat%C3%B3rio%20Descritivo%20Fluxo%20Infosiga%20v1.0.docx?d=w86aef844c91c4a46bdc9e395974cc312&csf=1&web=1&e=YuCiqk)
+- [Mapeamento de processos v1.1](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Infosiga/Fluxograma_Detalhado/fluxograma_infosiga/Relat%C3%B3rio%20Descritivo%20Fluxo%20Infosiga%20v1.1.docx?d=w9658441efc394f9681686cebd1290aeb&csf=1&web=1&e=kLFbyT)
 - [Boletins mensais](https://governosp.sharepoint.com/:f:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Infosiga/Boletim_Infosiga?csf=1&web=1&e=hCI5fq)
+- [Resumo executivo - Implantação de seções colapsáveis](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Infosiga/Infosiga%203.0/Desenvolvimento%20abas%20INFOSIGA.docx?d=w7bf2481b9e4f467090b12df9699c3dda&csf=1&web=1&e=ayZeun)
+- [Resumo executivo - Migração do Pentaho](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Infosiga/Infosiga%203.0/ATA%20%E2%80%93%20Reuni%C3%A3o%20Interna%20sobre%20Mitiga%C3%A7%C3%A3o%20de%20Risco%20do%20Pentaho.docx?d=we9727b5deb774c53b2a680e9284d2ce6&csf=1&web=1&e=ng1Zau)
+
+### Etapas
+
+- [à definir] Implantação das abas colapsáveis
 ## [[Convênio FGV]]
 
 Descrição: Convênio de cooperação técnica com a FGV Cidades com o objetivo de executar de estudos envolvendo fatores de riscos em sinistros com motociclistas, análise dos custos de sinistros e qualificação dos dados de boletins de ocorrência.
 
-Status: On-hold
+Status: On hold
 Prazo: -
 Project Manager: #deseg
 Atores envolvidos: #dest #fgv #sgr
@@ -256,7 +268,7 @@ Descrição: Colaboração técnica entre o Detran-SP e a EMDEC - Empresa Munici
 Status: Em execução
 Prazo: -
 Project Manager: #dest
-Atores envolvidos: #emdec #sgr
+Atores envolvidos: #emdec #sgr #dal
 Processo SEI: 140.01233739/2025-67
 ### Documentos
 
@@ -265,6 +277,7 @@ Processo SEI: 140.01233739/2025-67
 
 - [04/12/2025] Envio do plano de trabalho pela EMDEC
 - [05/12/2025] Início da inserção da documentação no processo (minuta, plano de trabalho, nota técnica)
+- [12/12/2025] Assinatura da documentação e despacho para a DAL
 
 ## [[Convênio com a SSP-SP]]
 
@@ -321,3 +334,4 @@ Atores envolvidos: #drmlt #deseg #bigrs
 ### Documentos
 
 - [Termo de referência](https://docs.google.com/document/d/1saMvEucoMunvNbKezWGeDhFDK64xiZ3E/edit?usp=sharing&ouid=115524721872365693222&rtpof=true&sd=true)
+- [Mapeamento de projetos em andamento](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Infosiga/Infosiga%203.1/INFOSIGA%20-%20Status%20projetos.docx?d=w63e6603a6c924f268631a82e9e651652&csf=1&web=1&e=nvbuYS)
