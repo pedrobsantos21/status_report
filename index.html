@@ -13,6 +13,158 @@
         body {
             font-family: 'Open Sans', sans-serif;
             color: #111414;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main-wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 320px;
+            background-color: #F9F9F9;
+            border-right: 0.1rem solid #E7E7E7;
+            padding: 2.4rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            transition: width 0.3s ease, padding 0.3s ease;
+        }
+        
+        .sidebar.collapsed {
+            width: 60px;
+            padding: 2.4rem 0.8rem;
+        }
+        
+        .sidebar.collapsed .sidebar-content {
+            display: none;
+        }
+        
+        .sidebar-toggle {
+            position: absolute;
+            top: 1.6rem;
+            right: 1.6rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #111414;
+            font-size: 1.6rem;
+            padding: 0.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.4rem;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+        
+        .sidebar-toggle:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        
+        .sidebar.collapsed .sidebar-toggle {
+            right: 0.8rem;
+            left: 0.8rem;
+            width: calc(100% - 1.6rem);
+        }
+        
+        .sidebar.collapsed .sidebar-toggle .material-icons {
+            transform: rotate(0deg);
+        }
+        
+        .sidebar:not(.collapsed) .sidebar-toggle .material-icons {
+            transform: rotate(0deg);
+        }
+        
+        .sidebar-content {
+            transition: opacity 0.2s ease;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 2.4rem;
+            max-width: calc(100% - 320px);
+            box-sizing: border-box;
+            transition: max-width 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .sidebar.collapsed ~ .main-content {
+            max-width: calc(100% - 60px);
+        }
+        
+        .main-content-wrapper {
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .main-content header {
+            width: 100%;
+        }
+        
+        .main-content .search-box,
+        .main-content .accordion,
+        .main-content .allocation-card {
+            width: 100%;
+        }
+        
+        @media (max-width: 992px) {
+            .main-wrapper {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 0.1rem solid #E7E7E7;
+                padding: 1.6rem;
+            }
+            
+            .sidebar.collapsed {
+                width: 100%;
+                padding: 1.6rem;
+            }
+            
+            .sidebar.collapsed .sidebar-content {
+                display: none;
+            }
+            
+            .main-content {
+                max-width: 100%;
+                padding: 1.6rem;
+            }
+            
+            .sidebar.collapsed ~ .main-content {
+                max-width: 100%;
+            }
+            
+            .filter-badges-container {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .filter-badges-container .filter-badge {
+                width: auto;
+                flex: 0 0 auto;
+            }
+            
+            .allocation-card .filter-badges-container {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .allocation-card .badge {
+                width: auto;
+            }
         }
         
         /* Accordion styles - following .dt-accordion pattern */
@@ -176,11 +328,11 @@
         
         /* Search box */
         .search-box {
-            background-color: #F9F9F9;
-            padding: 2.4rem;
-            border-radius: 1.6rem;
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
             margin-bottom: 2.4rem;
-            border: 0.1rem solid #E7E7E7;
+            border: none;
         }
         .search-box-title {
             font-weight: 600;
@@ -198,6 +350,7 @@
             color: #111414;
             background-color: #FFFFFF;
             transition: all 0.2s ease;
+            box-sizing: border-box;
         }
         .search-input:focus {
             outline: none;
@@ -215,25 +368,35 @@
         
         /* Filters section */
         .filters-section {
-            background-color: #F9F9F9;
-            padding: 2.4rem;
-            border-radius: 1.6rem;
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            border: none;
+        }
+        
+        .sidebar-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #111414;
             margin-bottom: 2.4rem;
-            border: 0.1rem solid #E7E7E7;
+            padding-bottom: 1.6rem;
+            border-bottom: 0.1rem solid #E7E7E7;
         }
         
         /* Allocation card section */
         .allocation-card {
             background-color: #F9F9F9;
-            padding: 2.4rem;
+            padding: 1.6rem;
             border-radius: 1.6rem;
             border: 0.1rem solid #E7E7E7;
+            margin-bottom: 2.4rem;
         }
         .allocation-card-title {
             font-weight: 600;
-            margin-bottom: 1.6rem;
+            margin-bottom: 1.2rem;
             color: #111414;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
         .allocation-card .badge {
             cursor: pointer;
@@ -247,14 +410,28 @@
         .filter-group-title {
             font-weight: 600;
             margin-bottom: 1.6rem;
+            margin-top: 2.4rem;
             color: #111414;
             font-size: 0.95rem;
+        }
+        .filter-group-title:first-of-type {
+            margin-top: 0;
+        }
+        .sidebar .search-box {
+            margin-top: 0;
+        }
+        .sidebar .filter-group-title:first-of-type {
+            margin-top: 2.4rem;
         }
         .filter-badges-container {
             display: flex;
             flex-wrap: wrap;
             gap: 0.8rem;
             margin-bottom: 2.4rem;
+        }
+        .filter-badges-container .filter-badge {
+            width: auto;
+            flex: 0 0 auto;
         }
         .filter-badge {
             cursor: pointer;
@@ -436,56 +613,67 @@
     </style>
 </head>
 <body>
-    <div class="container my-5">
-        <header class="mb-4">
-            <img src="logo.png" alt="Logo" class="header-logo">
-            <h1 class="display-4 mb-2">Status Report</h1>
-            <p class="text-muted">Coordenadoria do Observatório de Segurança no Trânsito</p>
-            <p class="text-muted small">Data de atualização: 15/12/2025</p>
-        </header>
-
-        <!-- Cards Container -->
-        <div class="cards-container">
-            <!-- Filtros -->
-            <div class="filters-section">
-                <div class="filter-group-title">Filtrar por Project Manager:</div>
-                <div class="filter-badges-container" id="pmFilters">
-                    <span class="badge filter-badge pm-badge active" data-pm="" data-filter-type="pm">Todos</span>
-                    <span class="badge filter-badge pm-badge" data-pm="dest" data-filter-type="pm">dest</span>
-                    <span class="badge filter-badge pm-badge" data-pm="cost" data-filter-type="pm">cost</span>
-                    <span class="badge filter-badge pm-badge" data-pm="deseg" data-filter-type="pm">deseg</span>
-                    <span class="badge filter-badge pm-badge" data-pm="drmlt" data-filter-type="pm">drmlt</span>
-                    <span class="badge filter-badge pm-badge" data-pm="cgsv" data-filter-type="pm">cgsv</span>
+    <div class="main-wrapper">
+        <!-- Sidebar com filtros -->
+        <aside class="sidebar">
+            <button class="sidebar-toggle" id="sidebarToggle" title="Colapsar sidebar">
+                <span class="material-icons">chevron_left</span>
+            </button>
+            
+            <div class="sidebar-content">
+                <div class="sidebar-title">Filtros</div>
+                
+                <!-- Busca por texto -->
+                <div class="search-box">
+                    <div class="search-box-title">Buscar projetos:</div>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Digite o nome do projeto ou palavras-chave...">
                 </div>
                 
-                <div class="filter-group-title">Filtrar por Status:</div>
-                <div class="filter-badges-container" id="statusFilters">
-                    <span class="badge filter-badge bg-secondary active" data-status="" data-filter-type="status">Todos</span>
-                    <span class="badge filter-badge bg-success" data-status="Em execução" data-filter-type="status">Em execução</span>
-                    <span class="badge filter-badge bg-secondary" data-status="Não iniciado" data-filter-type="status">Não iniciado</span>
-                    <span class="badge filter-badge bg-warning" data-status="On-hold" data-filter-type="status">On-hold</span>
-                    <span class="badge filter-badge bg-info" data-status="Finalizado" data-filter-type="status">Finalizado</span>
+                <!-- Filtros -->
+                <div class="filters-section">
+                    <div class="filter-group-title">Status:</div>
+                    <div class="filter-badges-container" id="statusFilters">
+                        <span class="badge filter-badge bg-secondary active" data-status="" data-filter-type="status">Todos</span>
+                        <span class="badge filter-badge bg-success" data-status="Em execução" data-filter-type="status">Em execução</span>
+                        <span class="badge filter-badge bg-secondary" data-status="Não iniciado" data-filter-type="status">Não iniciado</span>
+                        <span class="badge filter-badge bg-warning" data-status="On-hold" data-filter-type="status">On-hold</span>
+                        <span class="badge filter-badge bg-info" data-status="Finalizado" data-filter-type="status">Finalizado</span>
+                    </div>
+                    
+                    <div class="filter-group-title">Project Manager:</div>
+                    <div class="filter-badges-container" id="pmFilters">
+                        <span class="badge filter-badge pm-badge active" data-pm="" data-filter-type="pm">Todos</span>
+                        <span class="badge filter-badge pm-badge" data-pm="dest" data-filter-type="pm">dest</span>
+                        <span class="badge filter-badge pm-badge" data-pm="cost" data-filter-type="pm">cost</span>
+                        <span class="badge filter-badge pm-badge" data-pm="deseg" data-filter-type="pm">deseg</span>
+                        <span class="badge filter-badge pm-badge" data-pm="drmlt" data-filter-type="pm">drmlt</span>
+                        <span class="badge filter-badge pm-badge" data-pm="cgsv" data-filter-type="pm">cgsv</span>
+                    </div>
                 </div>
             </div>
+        </aside>
 
-            <!-- Alocação das equipes -->
-            <div class="allocation-card">
-                <div class="allocation-card-title">Alocação das equipes:</div>
-                <div class="filter-badges-container">
-                    <a href="https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/00%20Administrativo/00.00%20Gest%C3%A3o%20Interna/COST_DSEG_Planejamento.xlsx?d=wd27a80b68d25438d97b210a4debda871&csf=1&web=1&e=brBIro" target="_blank" class="badge pm-badge tag-badge">DESEG</a>
-                    <a href="https://governosp.sharepoint.com/:x:/t/DETRAN-CoordenadoriadeSeguranaViria/EYIpQfmOU0tIrpvt9WAxIlwBhmxwZq9RRKHsl3BEUevKGQ?e=VpB2qc" target="_blank" class="badge pm-badge tag-badge">DEST</a>
-                    <a href="https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/0.%20Administrativo/2.%20Gest%C3%A3o%20Equipe/COST_DRMLT_Planejamento.xlsx?d=wc11fa55e5a29423a978c5d38c2a39670&csf=1&web=1&e=4eJL9D" target="_blank" class="badge pm-badge tag-badge">DRMLT</a>
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <div class="main-content-wrapper">
+                <header class="mb-4">
+                    <img src="logo.png" alt="Logo" class="header-logo">
+                    <h1 class="display-4 mb-2">Status Report</h1>
+                    <p class="text-muted">Coordenadoria do Observatório de Segurança no Trânsito</p>
+                    <p class="text-muted small">Data de atualização: 15/12/2025</p>
+                </header>
+
+                <!-- Alocação das equipes -->
+                <div class="allocation-card">
+                    <div class="allocation-card-title">Alocação das equipes:</div>
+                    <div class="filter-badges-container">
+                        <a href="https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/00%20Administrativo/00.00%20Gest%C3%A3o%20Interna/COST_DSEG_Planejamento.xlsx?d=wd27a80b68d25438d97b210a4debda871&csf=1&web=1&e=brBIro" target="_blank" class="badge pm-badge tag-badge">DESEG</a>
+                        <a href="https://governosp.sharepoint.com/:x:/t/DETRAN-CoordenadoriadeSeguranaViria/EYIpQfmOU0tIrpvt9WAxIlwBhmxwZq9RRKHsl3BEUevKGQ?e=VpB2qc" target="_blank" class="badge pm-badge tag-badge">DEST</a>
+                        <a href="https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/0.%20Administrativo/2.%20Gest%C3%A3o%20Equipe/COST_DRMLT_Planejamento.xlsx?d=wc11fa55e5a29423a978c5d38c2a39670&csf=1&web=1&e=4eJL9D" target="_blank" class="badge pm-badge tag-badge">DRMLT</a>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Busca por texto -->
-        <div class="search-box">
-            <div class="search-box-title">Buscar projetos:</div>
-            <input type="text" id="searchInput" class="search-input" placeholder="Digite o nome do projeto ou palavras-chave...">
-        </div>
-
-        <div class="accordion" id="projetosAccordion">
+                <div class="accordion" id="projetosAccordion">
             <!-- Aditivo do Infosiga 3.0 -->
             <div class="accordion-item" data-pm="dest" data-status="Em execução">
                 <h2 class="accordion-header" id="heading1">
@@ -1563,7 +1751,9 @@
                 </div>
             </div>
 
-        </div>
+                </div>
+            </div>
+        </main>
     </div>
 
     <!-- Botão Voltar ao Topo -->
@@ -1576,6 +1766,23 @@
         let selectedPMs = [];
         let selectedStatuses = [];
         let searchText = '';
+        
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const sidebar = document.querySelector('.sidebar');
+        
+        if (sidebarToggle && sidebar) {
+            sidebarToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('collapsed');
+                const icon = this.querySelector('.material-icons');
+                if (sidebar.classList.contains('collapsed')) {
+                    icon.textContent = 'chevron_right';
+                    this.title = 'Expandir sidebar';
+                } else {
+                    icon.textContent = 'chevron_left';
+                    this.title = 'Colapsar sidebar';
+                }
+            });
+        }
         
         // Função para filtrar projetos
         function filterProjects() {
