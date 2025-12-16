@@ -1,4 +1,4 @@
-Data de atualização: 15/12/2025
+
 ## [[Aditivo do Infosiga 3.0]]
 
 Descrição: Continuidade do contrato com a Tech Solutions, visando a prestação de serviços de desenvolvimento e operação assistida para evolução do Infosiga.
@@ -11,13 +11,13 @@ Processo SEI: 140.00201905/2023-12
 
 ### Documentos
 
-- [Cronograma do projeto](https://favro.com/organization/597d2283e588880b9c1bf6dc/e9b316cc1de15b73931d9579)
+- [Cronograma do projeto e mapeamento do banco de horas](https://favro.com/organization/597d2283e588880b9c1bf6dc/e9b316cc1de15b73931d9579)
 - [Ata das reuniões com a Tech Solutions](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Infosiga/Infosiga%203.1/Infosiga%203.1%20-%20Resumo%20dos%20%27Status%20Report%27.docx?d=wb39bb75e4d0c48bfaa713ff44d5ada69&csf=1&web=1&e=C0XAof)
 
 ### Etapas
 
 - [13/02/2026] Marco 1 - Tabulação e Integração de Dados (progresso 71%)
-- [23/01/2026] Marco 2 - Georreferenciamento e Funcionalidades de Mapas (progresso 41%)
+- [23/01/2026] Marco 2 - Georreferenciamento e Funcionalidades de Mapas (progresso 53%)
 - [22/05/2026] Marco 3 - Front-end, Usabilidade e Segurança (progresso 10%)
 - [19/07/2026] Marco 4 - Integração de Dados Externos e Inteligência Analítica (progresso 0%)
 ## [[POC com a Palantir]]
@@ -25,7 +25,7 @@ Processo SEI: 140.00201905/2023-12
 Descrição: Prova de Conceito de solução de processamento e inteligência de dados com base nos dados do Infosiga e outras bases correlatas, com objetivo de apoiar na gestão da segurança no Trânsito
 
 Status: Em execução
-Prazo: 16/12/2025
+Prazo: 17/12/2025
 Project Manager: #cost
 Atores envolvidos: #dest #drmlt #deseg #prodesp #bigrs #dti #palantir #volis #aws
 Processo SEI: 140.01201967/2025-78
@@ -41,7 +41,8 @@ Processo SEI: 140.01201967/2025-78
 - [08/12/2025] Reunião de checkpoint
 - [11/12/2025] Desenvolvimento e feedbacks
 - [15/12/2025] Ajustes finais
-- [16/12/2025] Apresentação final
+- [16/12/2025] Reunião presencial de apresentação
+- [17/12/2025] Apresentação final ao Detran-SP
 
 
 ## [[RST - Registro de Sinistros de Trânsito]]
@@ -55,7 +56,8 @@ Atores envolvidos: #dest #bigrs #prodesp #google #der #dti
 Processo SEI: 140.01192205/2025-73
 ### Documentos
 
-- [Figma do projeto](https://www.figma.com/proto/zDlnJGYq3fCHGPfRh6o6iG/%F0%9F%9F%A1--RST---Registro-de-Sinistros-de-Tr%C3%A2nsito?node-id=55738-19962&t=jvwLitaSJGzipXLs-1&starting-point-node-id=55738%3A19962)
+- [Figma do fluxo](https://www.figma.com/proto/zDlnJGYq3fCHGPfRh6o6iG/%F0%9F%9F%A1--RST---Registro-de-Sinistros-de-Tr%C3%A2nsito?node-id=55738-19962&t=jvwLitaSJGzipXLs-1&starting-point-node-id=55738%3A19962)
+- [Figma de desenvolvimento](https://www.figma.com/design/zDlnJGYq3fCHGPfRh6o6iG/%F0%9F%9F%A1--RST---Registro-de-Sinistros-de-Tr%C3%A2nsito?node-id=1-59&p=f&t=lHKkisn2BBLvjDzU-0)
 - [Revisão Regras de Negócio - Pessoas e Veículos](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Tecnologia%20da%20informa%C3%A7%C3%A3o/APP-RST/Revis%C3%A3o%20Regras%20de%20Neg%C3%B3cio%20-%20Pessoas%20e%20Ve%C3%ADculos%20v001.docx?d=wdca0a30f7bbd4519954c0df5cffd8f62&csf=1&web=1&e=qPuu5d)
 ### Etapas
 
@@ -67,7 +69,8 @@ Processo SEI: 140.01192205/2025-73
 - [06/11/2025] Reunião de trabalho - definição de campos e regras de negócio
 - [01/12/2025] Reunião de trabalho - definição de campos e regras de negócio
 - [05/12/2025] Apresentação do RST à SSP-SP
-- [10/12/2025] Reunião com atores da SSP-SP - Elaboração da Matriz CSD
+- [10/12/2025] Reunião de trabalho com atores da SSP-SP
+- [16/12/2025] Reunião de trabalho com atores da SSP-SP
 
 ## [[Plano de Segurança Viária do Estado de São Paulo]]
 
@@ -76,14 +79,14 @@ Descrição: Coleta, Integração e Monitoramento dos indicadores de desempenho 
 Status: Não iniciado
 Prazo: Contínuo
 Project Manager: #drmlt
-Atores envolvidos: #dest #deseg #drmlt #bigrs #cist 
+Atores envolvidos: #dest #deseg #bigrs #cist 
 ### Documentos
 
 - [Relatório de metodologia](https://governosp-my.sharepoint.com/:w:/r/personal/marina_silva_detran_sp_gov_br/Documents/Arquivos%20de%20Chat%20do%20Microsoft%20Teams/COST_DRMLT_Monitoramento%20PSV_%20v.0.0.docx?d=w717105a6932f4ee5a3188e76ed314a54&csf=1&web=1&e=3Nv533)
 - [Planilha de monitoramento](https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/3.%20Produ%C3%A7%C3%A3o/1.%20Projetos%20Estrat%C3%A9gicos/1.%20PSV/1.%20Monitoramento/COST_DRMLT_Monitoramento%20PSV_v.0.0.xlsx?d=w4b78d2e2249e4543b83e7a99c4df77dc&csf=1&web=1&e=hftZz0)
 ### Etapas
 
-- [19/12/2025] Criação do procedimento operacional padrão para o monitoramento de indicadores de desempenho e produtos do PSV-SP 
+- [18/12/2025] Criação do procedimento operacional padrão para o monitoramento de indicadores de desempenho e produtos do PSV-SP 
 
 ## [[PRaVida]]
 
@@ -98,12 +101,18 @@ Atores envolvidos: #bigrs #dest #cist
 
 - [Fluxograma do processo](https://governosp.sharepoint.com/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20Projeto%20Estrat%C3%A9gico%20-%20Respeito%20%C3%A0%20Vida/2.%20Produ%C3%A7%C3%A3o/Modelagem%20Novo%20Respeito%20%C3%A0%20Vida%20v2.0/1.%20Fluxogramas/CGSV-RAV_Fluxograma%20-%20RaV_7.0.pdf)
 - [Cronograma PRaVida 1.0](https://governosp.sharepoint.com/:b:/t/DETRAN-CoordenadoriadeSeguranaViria/IQAq1c5XrfX-SanqIRwJm9elAacGfNVniEfgV66rcfbIslc?e=NpbV1v)
+- [Site](https://detran.sp.gov.br/pravida/)
+- [Manual operacional](https://detran.sp.gov.br/pravida/pdf/PRaVida_Manual%20Operacional_v1.pdf)
 ### Etapas
 
 - [05/12/2025] Reunião com a área de negócio (CIST)
 - [11/12/2025] Desenho do fluxo de dados da primeira etapa do PRaVida
 - [15/12/2025] Publicação do edital
-- [26/01/2025] Criação do procedimento operacional padrão de monitoramento dos dados do RaV
+- [15/01/2026] Fim da manifestação de interesse
+- [26/01/2026] Divulgação dos enquadrados e selecionados
+- [13/02/2026] Limite de envios das propostas técnicas do municípios enquadrados (C1 e C3)
+- [13/03/2026] Divulgação das propostas técnicas selecionadas para apoio com recursos financeiros.
+- [02/04/2026] Formalização dos convênios
 
 ## [[Nota Técnica 03 - Impactos hospitalares dos sinistros no estado de São Paulo]]
 
@@ -127,7 +136,7 @@ Atores envolvidos: #drmlt #dest
 Descrição: A partir da decisão da DFT de dar a ordem de serviço para as operações mensalmente, a DESEG está amadurecendo a metodologia de priorização de locais de risco e aprimorá-la com outras bases de dados e orientações operacionais. Para isso, como marco final desse processo, será consolidado um Caderno Técnico - documento interno com a descrição do método a ser utilizado.
 
 Status: Em execução
-Prazo: 17/12/2025
+Prazo: 19/12/2025
 Project Manager: #deseg 
 Atores envolvidos: #drmlt #dft 
 
@@ -143,10 +152,11 @@ Atores envolvidos: #drmlt #dft
 - [31/10/2025] Descrição do método de alocação
 - [19/11/2025] Consolidação - Parte 01
 - [12/12/2025] Consolidação - Parte 02
+- [16/12/2025] Envio do v0.4 à CGSV / DSV
 
-## [[Subsídios para a fiscalização]]
+## [[Fiscalização - Entrega mensal]]
 
-Descrição: Análise de dados de sinistros e das operações de fiscalização como subsídio à DFT para planejar o policiamento ostensivo do trânsito no estado.
+Descrição: Análise de dados de sinistros como subsídio à DFT para planejar o policiamento ostensivo do trânsito no estado.
 
 Status: Em execução
 Prazo: -
@@ -209,7 +219,7 @@ Atores envolvidos: #cist #dti
 Descrição: Coleta, acompanhamento e submissão de produtos de responsabilidade do Detran-SP ao Painel Pnatrans.
 
 Status: Em execução
-Prazo: 09/01/2025 (trimestral)
+Prazo: 09/01/2026 (trimestral)
 Project Manager: #drmlt
 Atores envolvidos: #dft #ept #dva #ascom
 ### Documentos
@@ -277,7 +287,7 @@ Processo SEI: 140.01233739/2025-67
 
 - [04/12/2025] Envio do plano de trabalho pela EMDEC
 - [05/12/2025] Início da inserção da documentação no processo (minuta, plano de trabalho, nota técnica)
-- [12/12/2025] Assinatura da documentação e despacho para a DAL
+- [15/12/2025] Assinatura da documentação e despacho para a DAL
 
 ## [[Convênio com a SSP-SP]]
 
@@ -320,9 +330,13 @@ Processo SEI: 140.01191071/2025-73
 ## [[Curso de Fiscalização]]
 
 Status: Em execução
-Prazo: 12/12/2025
+Prazo: -
 Project Manager: #cgsv
 Atores envolvidos: #drmlt #cist #bigrs #dft
+
+### Etapas
+
+- Elaboração da nota técnica com os resultados do questionário aplicado no evento
 
 ## [[Infosiga 4.0]]
 
