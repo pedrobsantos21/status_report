@@ -4,17 +4,17 @@ import re
 from pathlib import Path
 from html import escape
 from typing import List, Dict, Optional
+from datetime import datetime
 
 def parse_markdown_file(md_path: str) -> tuple[str, List[Dict]]:
     with open(md_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
     lines = content.split('\n')
-    update_date = None
     projects = []
     
-    if lines and lines[0].startswith('Data de atualização:'):
-        update_date = lines[0].replace('Data de atualização:', '').strip()
+    today = datetime.now()
+    update_date = today.strftime('%d/%m/%Y %H:%M:%S')
     
     current_project = None
     current_section = None
@@ -102,7 +102,7 @@ def parse_markdown_file(md_path: str) -> tuple[str, List[Dict]]:
                     'url': doc_url
                 })
         
-        if current_section == 'etapas' and line.startswith('- ['):
+        if current_section == 'etapas' and line.startswith('- '):
             etapa_match = re.search(r'\[([^\]]+)\]\s*(.+)', line)
             if etapa_match:
                 etapa_date = etapa_match.group(1)
@@ -111,13 +111,20 @@ def parse_markdown_file(md_path: str) -> tuple[str, List[Dict]]:
                     'date': etapa_date,
                     'description': etapa_desc
                 })
+            else:
+                etapa_desc = line.replace('- ', '').strip()
+                if etapa_desc:
+                    current_project['etapas'].append({
+                        'date': '',
+                        'description': etapa_desc
+                    })
         
         i += 1
     
     if current_project:
         projects.append(current_project)
     
-    return update_date or 'Data não especificada', projects
+    return update_date, projects
 
 def get_status_badge_class(status: str) -> str:
     status_map = {
@@ -161,14 +168,17 @@ def generate_project_html(project: Dict, index: int) -> str:
     
     etapas_html = ''
     if project['etapas']:
-        etapa_items = ''.join([
-            f'<li>[{escape(etapa["date"])}] {escape(etapa["description"])}</li>'
-            for etapa in project['etapas']
-        ])
+        etapa_items = []
+        for etapa in project['etapas']:
+            if etapa['date']:
+                etapa_items.append(f'<li>[{escape(etapa["date"])}] {escape(etapa["description"])}</li>')
+            else:
+                etapa_items.append(f'<li>{escape(etapa["description"])}</li>')
+        etapa_items_html = ''.join(etapa_items)
         etapas_html = f'''
                         <div class="section-title">Etapas</div>
                         <ul class="etapas-list">
-                            {etapa_items}
+                            {etapa_items_html}
                         </ul>'''
     
     description_html = ''
@@ -248,7 +258,7 @@ def generate_html(update_date: str, projects: List[Dict], template_html: str) ->
         print('Aviso: Não foi possível encontrar a seção de projetos. Gerando HTML completo...')
         new_html = template_html
     
-    update_date_pattern = r'Data de atualização: \d{2}/\d{2}/\d{4}'
+    update_date_pattern = r'Data de atualização: [^<]+'
     new_html = re.sub(update_date_pattern, f'Data de atualização: {update_date}', new_html)
     
     return new_html
