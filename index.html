@@ -115,36 +115,68 @@
             width: 100%;
         }
         
+        .mobile-filter-toggle {
+            display: none;
+        }
+        
         @media (max-width: 992px) {
             .main-wrapper {
                 flex-direction: column;
             }
             
+            .mobile-filter-toggle {
+                display: flex;
+                position: fixed;
+                top: 1.6rem;
+                right: 1.6rem;
+                z-index: 1000;
+                background-color: #111414;
+                color: #FFFFFF;
+                border: none;
+                border-radius: 50%;
+                width: 4rem;
+                height: 4rem;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+            
+            .mobile-filter-toggle:hover {
+                background-color: #333333;
+            }
+            
+            .mobile-filter-toggle .material-icons {
+                font-size: 2rem;
+            }
+            
             .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
                 width: 100%;
-                height: auto;
-                position: relative;
+                height: 100vh;
+                z-index: 999;
+                background-color: #F9F9F9;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                overflow-y: auto;
+                padding: 2.4rem;
                 border-right: none;
-                border-bottom: 0.1rem solid #E7E7E7;
-                padding: 1.6rem;
             }
             
-            .sidebar.collapsed {
-                width: 100%;
-                padding: 1.6rem;
+            .sidebar.mobile-visible {
+                transform: translateX(0);
             }
             
-            .sidebar.collapsed .sidebar-content {
+            .sidebar-toggle {
                 display: none;
             }
             
             .main-content {
                 max-width: 100%;
                 padding: 1.6rem;
-            }
-            
-            .sidebar.collapsed ~ .main-content {
-                max-width: 100%;
             }
             
             .filter-badges-container {
@@ -652,6 +684,11 @@
                 </div>
             </div>
         </aside>
+        
+        <!-- Botão para mostrar filtros no mobile -->
+        <button class="mobile-filter-toggle" id="mobileFilterToggle" title="Mostrar filtros">
+            <span class="material-icons">filter_list</span>
+        </button>
 
         <!-- Conteúdo principal -->
         <main class="main-content">
@@ -1724,6 +1761,7 @@
         
         const sidebarToggle = document.getElementById('sidebarToggle');
         const sidebar = document.querySelector('.sidebar');
+        const mobileFilterToggle = document.getElementById('mobileFilterToggle');
         
         if (sidebarToggle && sidebar) {
             sidebarToggle.addEventListener('click', function() {
@@ -1735,6 +1773,29 @@
                 } else {
                     icon.textContent = 'chevron_left';
                     this.title = 'Colapsar sidebar';
+                }
+            });
+        }
+        
+        if (mobileFilterToggle && sidebar) {
+            mobileFilterToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('mobile-visible');
+                const icon = this.querySelector('.material-icons');
+                if (sidebar.classList.contains('mobile-visible')) {
+                    icon.textContent = 'close';
+                    this.title = 'Fechar filtros';
+                } else {
+                    icon.textContent = 'filter_list';
+                    this.title = 'Mostrar filtros';
+                }
+            });
+            
+            sidebar.addEventListener('click', function(e) {
+                if (e.target === sidebar) {
+                    sidebar.classList.remove('mobile-visible');
+                    const icon = mobileFilterToggle.querySelector('.material-icons');
+                    icon.textContent = 'filter_list';
+                    mobileFilterToggle.title = 'Mostrar filtros';
                 }
             });
         }
