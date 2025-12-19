@@ -642,6 +642,198 @@
         .timeline-item:hover .timeline-dot {
             transform: scale(1.3);
         }
+        
+        .nav-tabs {
+            border-bottom: 0.2rem solid #E7E7E7;
+            margin-bottom: 2.4rem;
+        }
+        
+        .nav-tabs .nav-link {
+            border: none;
+            border-bottom: 0.2rem solid transparent;
+            color: #7A7F83;
+            font-weight: 600;
+            padding: 1.2rem 2.4rem;
+            margin-right: 0.8rem;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-tabs .nav-link:hover {
+            border-bottom-color: #0058AF;
+            color: #0058AF;
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: #0058AF;
+            border-bottom-color: #0058AF;
+            background-color: transparent;
+        }
+        
+        .tab-content {
+            width: 100%;
+        }
+        
+        .calendar-container {
+            background-color: #FFFFFF;
+            border-radius: 1.6rem;
+            border: 0.1rem solid #E7E7E7;
+            padding: 2.4rem;
+            margin-bottom: 2.4rem;
+        }
+        
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.4rem;
+        }
+        
+        .calendar-nav-btn {
+            background: none;
+            border: none;
+            color: #0058AF;
+            font-size: 1.6rem;
+            cursor: pointer;
+            padding: 0.8rem;
+            border-radius: 0.4rem;
+            transition: all 0.2s ease;
+        }
+        
+        .calendar-nav-btn:hover {
+            background-color: rgba(0, 88, 175, 0.1);
+        }
+        
+        .calendar-month-year {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #111414;
+        }
+        
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.8rem;
+        }
+        
+        .calendar-day-header {
+            text-align: center;
+            font-weight: 600;
+            color: #7A7F83;
+            padding: 0.8rem;
+            font-size: 0.9rem;
+        }
+        
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0.4rem;
+            border-radius: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background-color: #F9F9F9;
+            border: 0.1rem solid transparent;
+        }
+        
+        .calendar-day:hover {
+            background-color: #E6F0FC;
+            border-color: #0058AF;
+        }
+        
+        .calendar-day.other-month {
+            opacity: 0.3;
+        }
+        
+        .calendar-day.today {
+            background-color: #E6F0FC;
+            border-color: #0058AF;
+            font-weight: 600;
+        }
+        
+        .calendar-day.has-events {
+            background-color: #E6F0FC;
+            border-color: #0058AF;
+        }
+        
+        .calendar-day.has-events.today {
+            background-color: #B8D4F0;
+            border-color: #0058AF;
+        }
+        
+        .calendar-day.selected {
+            background-color: #0058AF !important;
+            border-color: #0058AF !important;
+            color: #FFFFFF;
+        }
+        
+        .calendar-day.selected .calendar-day-number {
+            color: #FFFFFF;
+        }
+        
+        .calendar-day.selected .calendar-day-events {
+            color: #FFFFFF;
+        }
+        
+        .calendar-day-number {
+            font-size: 1rem;
+            color: #111414;
+            margin-bottom: 0.2rem;
+        }
+        
+        .calendar-day-events {
+            font-size: 0.7rem;
+            color: #7A7F83;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .calendar-events-list {
+            margin-top: 2.4rem;
+        }
+        
+        .calendar-events-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #111414;
+            margin-bottom: 1.6rem;
+        }
+        
+        .calendar-event-item {
+            background-color: #F9F9F9;
+            border: 0.1rem solid #E7E7E7;
+            border-radius: 0.8rem;
+            padding: 1.6rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        .calendar-event-date {
+            font-weight: 600;
+            color: #0058AF;
+            margin-bottom: 0.4rem;
+        }
+        
+        .calendar-event-projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .calendar-event-project {
+            background-color: #E6F0FC;
+            color: #0058AF;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.4rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .calendar-event-description {
+            color: #111414;
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
@@ -697,20 +889,33 @@
                     <img src="logo.png" alt="Logo" class="header-logo">
                     <h1 class="display-4 mb-2">Status Report</h1>
                     <p class="text-muted">Coordenadoria do Observatório de Segurança no Trânsito</p>
-                    <p class="text-muted small">Data de atualização: 19/12/2025 10:51:27</p>
+                    <p class="text-muted small">Data de atualização: 19/12/2025 11:47:04</p>
                 </header>
 
-                <!-- Alocação das equipes -->
-                <div class="allocation-card">
-                    <div class="allocation-card-title">Alocação das equipes:</div>
-                    <div class="filter-badges-container">
-                        <a href="https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/00%20Administrativo/00.00%20Gest%C3%A3o%20Interna/COST_DSEG_Planejamento.xlsx?d=wd27a80b68d25438d97b210a4debda871&csf=1&web=1&e=brBIro" target="_blank" class="badge pm-badge tag-badge">DESEG</a>
-                        <a href="https://governosp.sharepoint.com/:x:/t/DETRAN-CoordenadoriadeSeguranaViria/EYIpQfmOU0tIrpvt9WAxIlwBhmxwZq9RRKHsl3BEUevKGQ?e=VpB2qc" target="_blank" class="badge pm-badge tag-badge">DEST</a>
-                        <a href="https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/0.%20Administrativo/2.%20Gest%C3%A3o%20Equipe/COST_DRMLT_Planejamento.xlsx?d=wc11fa55e5a29423a978c5d38c2a39670&csf=1&web=1&e=4eJL9D" target="_blank" class="badge pm-badge tag-badge">DRMLT</a>
-                    </div>
-                </div>
+                <!-- Tabs -->
+                <ul class="nav nav-tabs" id="mainTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="projetos-tab" data-bs-toggle="tab" data-bs-target="#projetos" type="button" role="tab" aria-controls="projetos" aria-selected="true">Projetos</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="calendario-tab" data-bs-toggle="tab" data-bs-target="#calendario" type="button" role="tab" aria-controls="calendario" aria-selected="false">Calendário</button>
+                    </li>
+                </ul>
 
-                <div class="accordion" id="projetosAccordion">
+                <div class="tab-content" id="mainTabsContent">
+                    <!-- Tab Projetos -->
+                    <div class="tab-pane fade show active" id="projetos" role="tabpanel" aria-labelledby="projetos-tab">
+                        <!-- Alocação das equipes -->
+                        <div class="allocation-card">
+                            <div class="allocation-card-title">Alocação das equipes:</div>
+                            <div class="filter-badges-container">
+                                <a href="https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/00%20Administrativo/00.00%20Gest%C3%A3o%20Interna/COST_DSEG_Planejamento.xlsx?d=wd27a80b68d25438d97b210a4debda871&csf=1&web=1&e=brBIro" target="_blank" class="badge pm-badge tag-badge">DESEG</a>
+                                <a href="https://governosp.sharepoint.com/:x:/t/DETRAN-CoordenadoriadeSeguranaViria/EYIpQfmOU0tIrpvt9WAxIlwBhmxwZq9RRKHsl3BEUevKGQ?e=VpB2qc" target="_blank" class="badge pm-badge tag-badge">DEST</a>
+                                <a href="https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/0.%20Administrativo/2.%20Gest%C3%A3o%20Equipe/COST_DRMLT_Planejamento.xlsx?d=wc11fa55e5a29423a978c5d38c2a39670&csf=1&web=1&e=4eJL9D" target="_blank" class="badge pm-badge tag-badge">DRMLT</a>
+                            </div>
+                        </div>
+
+                        <div class="accordion" id="projetosAccordion">
             <!-- Aditivo do Infosiga 3.0 -->
             <div class="accordion-item" data-pm="dest" data-status="Em execução">
                 <h2 class="accordion-header" id="heading1">
@@ -1744,6 +1949,25 @@
                 </div>
             </div>
 </div>
+                    </div>
+
+                    <!-- Tab Calendário -->
+                    <div class="tab-pane fade" id="calendario" role="tabpanel" aria-labelledby="calendario-tab">
+                        <div class="calendar-container">
+                            <div class="calendar-header">
+                                <button class="calendar-nav-btn" id="prevMonth">
+                                    <span class="material-icons">chevron_left</span>
+                                </button>
+                                <div class="calendar-month-year" id="calendarMonthYear"></div>
+                                <button class="calendar-nav-btn" id="nextMonth">
+                                    <span class="material-icons">chevron_right</span>
+                                </button>
+                            </div>
+                            <div class="calendar-grid" id="calendarGrid"></div>
+                        </div>
+                        <div class="calendar-events-list" id="calendarEventsList"></div>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
@@ -2061,6 +2285,7 @@
             // Aguardar um pouco para garantir que o DOM está totalmente renderizado
             setTimeout(function() {
                 createTimelines();
+                extractAllEvents();
             }, 100);
         });
         
@@ -2068,6 +2293,7 @@
         window.addEventListener('load', function() {
             setTimeout(function() {
                 createTimelines();
+                extractAllEvents();
             }, 200);
         });
         
@@ -2078,8 +2304,352 @@
             // DOM já está pronto
             setTimeout(function() {
                 createTimelines();
+                extractAllEvents();
             }, 300);
         }
+        
+        // Sistema de Calendário
+        let currentCalendarDate = new Date();
+        let allEvents = [];
+        let selectedDate = null;
+        
+        function extractAllEvents() {
+            allEvents = [];
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            
+            accordionItems.forEach(item => {
+                const projectName = item.querySelector('.project-name')?.textContent.trim() || 'Projeto sem nome';
+                
+                const etapasList = item.querySelectorAll('.etapas-list li');
+                const timelineItems = item.querySelectorAll('.timeline-item');
+                
+                if (etapasList.length > 0) {
+                    etapasList.forEach(li => {
+                        const text = li.textContent.trim();
+                        const dateMatch = text.match(/\[(\d{2})\/(\d{2})\/(\d{4})\]/);
+                        if (dateMatch) {
+                            const [, day, month, year] = dateMatch;
+                            const eventDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+                            const description = text.replace(/\[\d{2}\/\d{2}\/\d{4}\]\s*/, '').trim();
+                            
+                            allEvents.push({
+                                date: eventDate,
+                                dateStr: `${day}/${month}/${year}`,
+                                project: projectName,
+                                description: description
+                            });
+                        }
+                    });
+                }
+                
+                if (timelineItems.length > 0) {
+                    timelineItems.forEach(timelineItem => {
+                        const dateElement = timelineItem.querySelector('.timeline-date');
+                        const contentElement = timelineItem.querySelector('.timeline-content');
+                        
+                        if (dateElement && contentElement) {
+                            const dateText = dateElement.textContent.trim();
+                            const description = contentElement.textContent.trim();
+                            
+                            const dateMatch = dateText.match(/(\d{2})\/(\d{2})\/(\d{4})/);
+                            if (dateMatch) {
+                                const [, day, month, year] = dateMatch;
+                                const eventDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+                                
+                                const existingEvent = allEvents.find(e => 
+                                    e.dateStr === `${day}/${month}/${year}` && 
+                                    e.project === projectName && 
+                                    e.description === description
+                                );
+                                
+                                if (!existingEvent) {
+                                    allEvents.push({
+                                        date: eventDate,
+                                        dateStr: `${day}/${month}/${year}`,
+                                        project: projectName,
+                                        description: description
+                                    });
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+            
+            allEvents.sort((a, b) => a.date - b.date);
+        }
+        
+        function initializeCalendar() {
+            extractAllEvents();
+            selectedDate = null;
+            
+            const prevBtn = document.getElementById('prevMonth');
+            const nextBtn = document.getElementById('nextMonth');
+            
+            if (prevBtn && !prevBtn.hasAttribute('data-listener')) {
+                prevBtn.setAttribute('data-listener', 'true');
+                prevBtn.addEventListener('click', function() {
+                    currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
+                    selectedDate = null;
+                    extractAllEvents();
+                    renderCalendar();
+                });
+            }
+            
+            if (nextBtn && !nextBtn.hasAttribute('data-listener')) {
+                nextBtn.setAttribute('data-listener', 'true');
+                nextBtn.addEventListener('click', function() {
+                    currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
+                    selectedDate = null;
+                    extractAllEvents();
+                    renderCalendar();
+                });
+            }
+            
+            renderCalendar();
+        }
+        
+        function renderCalendar() {
+            if (allEvents.length === 0) {
+                extractAllEvents();
+            }
+            
+            const year = currentCalendarDate.getFullYear();
+            const month = currentCalendarDate.getMonth();
+            
+            const monthNames = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 
+                              'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+            
+            const monthYearEl = document.getElementById('calendarMonthYear');
+            if (monthYearEl) {
+                monthYearEl.textContent = `${monthNames[month]} ${year}`;
+            }
+            
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const daysInMonth = lastDay.getDate();
+            const startingDayOfWeek = firstDay.getDay();
+            
+            const dayNames = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+            const calendarGrid = document.getElementById('calendarGrid');
+            if (!calendarGrid) return;
+            
+            calendarGrid.innerHTML = '';
+            
+            dayNames.forEach(dayName => {
+                const dayHeader = document.createElement('div');
+                dayHeader.className = 'calendar-day-header';
+                dayHeader.textContent = dayName;
+                calendarGrid.appendChild(dayHeader);
+            });
+            
+            for (let i = 0; i < startingDayOfWeek; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.className = 'calendar-day other-month';
+                calendarGrid.appendChild(emptyDay);
+            }
+            
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            for (let day = 1; day <= daysInMonth; day++) {
+                const date = new Date(year, month, day);
+                date.setHours(0, 0, 0, 0);
+                
+                const dayEvents = allEvents.filter(event => {
+                    if (!event || !event.date) return false;
+                    const eventDate = new Date(event.date);
+                    eventDate.setHours(0, 0, 0, 0);
+                    return eventDate.getTime() === date.getTime();
+                });
+                
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                
+                if (date.getTime() === today.getTime()) {
+                    dayElement.classList.add('today');
+                }
+                
+                if (dayEvents.length > 0) {
+                    dayElement.classList.add('has-events');
+                    dayElement.setAttribute('data-date', date.toISOString().split('T')[0]);
+                    dayElement.style.cursor = 'pointer';
+                    
+                    if (selectedDate && date.getTime() === selectedDate.getTime()) {
+                        dayElement.classList.add('selected');
+                    }
+                    
+                    dayElement.addEventListener('click', function() {
+                        if (selectedDate && date.getTime() === selectedDate.getTime()) {
+                            selectedDate = null;
+                            const currentYear = currentCalendarDate.getFullYear();
+                            const currentMonth = currentCalendarDate.getMonth();
+                            renderCalendar();
+                            renderEventsForMonth(currentYear, currentMonth);
+                        } else {
+                            selectedDate = new Date(date);
+                            renderCalendar();
+                            showEventsForDate(date);
+                        }
+                    });
+                }
+                
+                const dayNumber = document.createElement('div');
+                dayNumber.className = 'calendar-day-number';
+                dayNumber.textContent = day;
+                dayElement.appendChild(dayNumber);
+                
+                if (dayEvents.length > 0) {
+                    const eventsCount = document.createElement('div');
+                    eventsCount.className = 'calendar-day-events';
+                    eventsCount.textContent = `${dayEvents.length} evento${dayEvents.length > 1 ? 's' : ''}`;
+                    dayElement.appendChild(eventsCount);
+                }
+                
+                calendarGrid.appendChild(dayElement);
+            }
+            
+            const totalCellsUsed = startingDayOfWeek + daysInMonth;
+            const weeksNeeded = Math.ceil(totalCellsUsed / 7);
+            const totalCellsNeeded = weeksNeeded * 7;
+            const remainingDays = totalCellsNeeded - totalCellsUsed;
+            
+            if (remainingDays > 0 && remainingDays < 7) {
+                for (let i = 0; i < remainingDays; i++) {
+                    const emptyDay = document.createElement('div');
+                    emptyDay.className = 'calendar-day other-month';
+                    calendarGrid.appendChild(emptyDay);
+                }
+            }
+            
+            if (selectedDate && 
+                selectedDate.getFullYear() === year && 
+                selectedDate.getMonth() === month) {
+                showEventsForDate(selectedDate);
+            } else {
+                renderEventsForMonth(year, month);
+            }
+        }
+        
+        function renderEventsForMonth(year, month) {
+            const monthEvents = allEvents.filter(event => {
+                const eventDate = new Date(event.date);
+                return eventDate.getFullYear() === year && eventDate.getMonth() === month;
+            });
+            
+            const eventsList = document.getElementById('calendarEventsList');
+            eventsList.innerHTML = '';
+            
+            if (monthEvents.length === 0) {
+                eventsList.innerHTML = '<div class="calendar-events-title">Nenhum evento neste mês</div>';
+                return;
+            }
+            
+            const eventsByDate = {};
+            monthEvents.forEach(event => {
+                const dateKey = event.dateStr;
+                if (!eventsByDate[dateKey]) {
+                    eventsByDate[dateKey] = [];
+                }
+                eventsByDate[dateKey].push(event);
+            });
+            
+            const sortedDates = Object.keys(eventsByDate).sort((a, b) => {
+                const [dayA, monthA, yearA] = a.split('/');
+                const [dayB, monthB, yearB] = b.split('/');
+                return new Date(yearA, monthA - 1, dayA) - new Date(yearB, monthB - 1, dayB);
+            });
+            
+            sortedDates.forEach(dateStr => {
+                const events = eventsByDate[dateStr];
+                const eventItem = document.createElement('div');
+                eventItem.className = 'calendar-event-item';
+                
+                const eventDate = document.createElement('div');
+                eventDate.className = 'calendar-event-date';
+                eventDate.textContent = dateStr;
+                eventItem.appendChild(eventDate);
+                
+                const eventProjects = document.createElement('div');
+                eventProjects.className = 'calendar-event-projects';
+                
+                const uniqueProjects = [...new Set(events.map(e => e.project))];
+                uniqueProjects.forEach(project => {
+                    const projectBadge = document.createElement('span');
+                    projectBadge.className = 'calendar-event-project';
+                    projectBadge.textContent = project;
+                    eventProjects.appendChild(projectBadge);
+                });
+                
+                eventItem.appendChild(eventProjects);
+                
+                const eventDescriptions = document.createElement('div');
+                eventDescriptions.className = 'calendar-event-description';
+                events.forEach((event, index) => {
+                    if (index > 0) eventDescriptions.appendChild(document.createTextNode(' • '));
+                    eventDescriptions.appendChild(document.createTextNode(event.description));
+                });
+                eventItem.appendChild(eventDescriptions);
+                
+                eventsList.appendChild(eventItem);
+            });
+        }
+        
+        function showEventsForDate(date) {
+            const dateStr = date.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+            const dayEvents = allEvents.filter(event => {
+                const eventDate = new Date(event.date);
+                eventDate.setHours(0, 0, 0, 0);
+                return eventDate.getTime() === date.getTime();
+            });
+            
+            if (dayEvents.length > 0) {
+                const eventsList = document.getElementById('calendarEventsList');
+                eventsList.innerHTML = '';
+                
+                const title = document.createElement('div');
+                title.className = 'calendar-events-title';
+                title.textContent = `Eventos em ${dateStr}`;
+                eventsList.appendChild(title);
+                
+                dayEvents.forEach(event => {
+                    const eventItem = document.createElement('div');
+                    eventItem.className = 'calendar-event-item';
+                    
+                    const eventProject = document.createElement('div');
+                    eventProject.className = 'calendar-event-project';
+                    eventProject.textContent = event.project;
+                    eventProject.style.marginBottom = '0.8rem';
+                    eventItem.appendChild(eventProject);
+                    
+                    const eventDescription = document.createElement('div');
+                    eventDescription.className = 'calendar-event-description';
+                    eventDescription.textContent = event.description;
+                    eventItem.appendChild(eventDescription);
+                    
+                    eventsList.appendChild(eventItem);
+                });
+                
+                eventsList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        
+        const tabEl = document.querySelector('#calendario-tab');
+        if (tabEl) {
+            tabEl.addEventListener('shown.bs.tab', function() {
+                selectedDate = null;
+                extractAllEvents();
+                setTimeout(function() {
+                    initializeCalendar();
+                }, 100);
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                extractAllEvents();
+            }, 500);
+        });
         
         // Função para criar timelines interativas
         function createTimelines() {
