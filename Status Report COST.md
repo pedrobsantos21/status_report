@@ -13,19 +13,20 @@ Processo SEI: 140.00201905/2023-12
 
 - [Cronograma do projeto e mapeamento do banco de horas](https://favro.com/organization/597d2283e588880b9c1bf6dc/e9b316cc1de15b73931d9579)
 - [Ata das reuniões com a Tech Solutions](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Infosiga/Infosiga%203.1/Infosiga%203.1%20-%20Resumo%20dos%20%27Status%20Report%27.docx?d=wb39bb75e4d0c48bfaa713ff44d5ada69&csf=1&web=1&e=C0XAof)
+- [Figma do painel de personalização](https://www.figma.com/design/GLQRSyw3MdmAdf6Hds2OSy/Detran-%7C-Portal-Infosiga--Branch-?node-id=0-1&p=f&t=ILN2HiBKe80lqqnB-0)
 
 ### Etapas
 
-- [13/02/2026] Marco 1 - Tabulação e Integração de Dados (progresso 71%)
-- [23/01/2026] Marco 2 - Georreferenciamento e Funcionalidades de Mapas (progresso 53%)
-- [22/05/2026] Marco 3 - Front-end, Usabilidade e Segurança (progresso 10%)
+- [13/02/2026] Marco 1 - Tabulação e Integração de Dados (progresso 76%)
+- [23/01/2026] Marco 2 - Georreferenciamento e Funcionalidades de Mapas (progresso 76%)
+- [22/05/2026] Marco 3 - Front-end, Usabilidade e Segurança (progresso 9%)
 - [19/07/2026] Marco 4 - Integração de Dados Externos e Inteligência Analítica (progresso 0%)
 ## [[POC com a Palantir]]
 
 Descrição: Prova de Conceito de solução de processamento e inteligência de dados com base nos dados do Infosiga e outras bases correlatas, com objetivo de apoiar na gestão da segurança no Trânsito
 
 Status: Em execução
-Prazo: 17/12/2025
+Prazo: 16/01/2026
 Project Manager: #cost
 Atores envolvidos: #dest #drmlt #deseg #prodesp #bigrs #dti #palantir #volis #aws
 Processo SEI: 140.01201967/2025-78
@@ -42,7 +43,8 @@ Processo SEI: 140.01201967/2025-78
 - [11/12/2025] Desenvolvimento e feedbacks
 - [15/12/2025] Ajustes finais
 - [16/12/2025] Reunião presencial de apresentação
-- [17/12/2025] Apresentação final ao Detran-SP
+- [17/12/2025] Apresentação do v1 ao Detran-SP
+- [16/01/2026] Apresentação do v2 ao Detran-SP
 
 
 ## [[RST - Registro de Sinistros de Trânsito]]
@@ -68,15 +70,16 @@ Processo SEI: 140.01192205/2025-73
 - [04/11/2025] Reunião de trabalho - definição de campos e regras de negócio
 - [06/11/2025] Reunião de trabalho - definição de campos e regras de negócio
 - [01/12/2025] Reunião de trabalho - definição de campos e regras de negócio
-- [05/12/2025] Apresentação do RST à SSP-SP
-- [10/12/2025] Reunião de trabalho com atores da SSP-SP
-- [16/12/2025] Reunião de trabalho com atores da SSP-SP
+- [05/12/2025] Apresentação do RST à SSP-SP / polívias
+- [10/12/2025] Reunião de trabalho com atores das polícias
+- [16/12/2025] Reunião de trabalho com atores das polícias
+- [18/12/2025] Reunião de trabalho com atores das polícias
 
 ## [[Plano de Segurança Viária do Estado de São Paulo]]
 
 Descrição: Coleta, Integração e Monitoramento dos indicadores de desempenho e produtos do PSV-SP.
 
-Status: Não iniciado
+Status: Em execução
 Prazo: Contínuo
 Project Manager: #drmlt
 Atores envolvidos: #dest #deseg #bigrs #cist 
@@ -92,7 +95,7 @@ Atores envolvidos: #dest #deseg #bigrs #cist
 
 Descrição: Coleta, integração e monitoramento de dados relacionados às intervenções dentro do âmbito do Respeito à Vida
 
-Status: Não iniciado
+Status: Em execução
 Prazo: Contínuo
 Project Manager: #drmlt
 Atores envolvidos: #bigrs #dest #cist
@@ -108,6 +111,7 @@ Atores envolvidos: #bigrs #dest #cist
 - [05/12/2025] Reunião com a área de negócio (CIST)
 - [11/12/2025] Desenho do fluxo de dados da primeira etapa do PRaVida
 - [15/12/2025] Publicação do edital
+- [18/12/2025] Reunião com a área de negócio - automatização do cálculo da pontuação
 - [15/01/2026] Fim da manifestação de interesse
 - [26/01/2026] Divulgação dos enquadrados e selecionados
 - [13/02/2026] Limite de envios das propostas técnicas do municípios enquadrados (C1 e C3)
@@ -136,7 +140,7 @@ Atores envolvidos: #drmlt #dest
 Descrição: A partir da decisão da DFT de dar a ordem de serviço para as operações mensalmente, a DESEG está amadurecendo a metodologia de priorização de locais de risco e aprimorá-la com outras bases de dados e orientações operacionais. Para isso, como marco final desse processo, será consolidado um Caderno Técnico - documento interno com a descrição do método a ser utilizado.
 
 Status: Em execução
-Prazo: 19/12/2025
+Prazo: 05/01/2026
 Project Manager: #deseg 
 Atores envolvidos: #drmlt #dft 
 
@@ -153,6 +157,7 @@ Atores envolvidos: #drmlt #dft
 - [19/11/2025] Consolidação - Parte 01
 - [12/12/2025] Consolidação - Parte 02
 - [16/12/2025] Envio do v0.4 à CGSV / DSV
+- [05/01/2026] Finalização do v1.0
 
 ## [[Fiscalização - Entrega mensal]]
 
@@ -170,6 +175,7 @@ Processo SEI: 140.01279873/2025-12
 ### Etapas
 
 - [17/12/2025] Reunião de alinhamento com a CFT
+- [10/01/2026] Envio do material para as operações de Fevereiro / 2026
 ## [[Anuário Estatístico do Infosiga]]
 
 Descrição: Publicação com periodicidade anual, compilando dados de sinistros e óbitos no estado de São Paulo. 
@@ -200,7 +206,7 @@ Atores envolvidos: #drmlt #deseg #dest #bigrs
 Descrição: Painel com os resultados do questionário de diagnóstico municipal, elaborado com o PowerBI.
 
 Status: Em execução
-Prazo: 18/12/2025
+Prazo: 19/12/2025
 Project Manager: #dest 
 Atores envolvidos: #cist #dti
 
@@ -213,7 +219,7 @@ Atores envolvidos: #cist #dti
 
 - [04/12/2025] Finalização do Dashboard
 - [05/12/2025] Publicação do Dashboard V01
-- [18/12/2025] Publicação do Dashboard V02
+- [19/12/2025] Publicação do Dashboard V02
 ## [[Gestão do Pnatrans]]
 
 Descrição: Coleta, acompanhamento e submissão de produtos de responsabilidade do Detran-SP ao Painel Pnatrans.
@@ -228,6 +234,7 @@ Atores envolvidos: #dft #ept #dva #ascom
 - [Relatório primeira submissão](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/3.%20Produ%C3%A7%C3%A3o/2.%20Pnatrans/3.%20Produ%C3%A7%C3%A3o/5.%20Relat%C3%B3rios%20de%20Entregas/Relat%C3%B3rio%20SEI%20-%201%C2%AA%20Remessa/Relat%C3%B3rio%20Pnatrans%201%C2%AA%20Remessa%202025%20v0.0.pdf?csf=1&web=1&e=u9RxPj)
 - [Relatório do Prêmio Senatran](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/3.%20Produ%C3%A7%C3%A3o/2.%20Pnatrans/3.%20Produ%C3%A7%C3%A3o/7.%20Pr%C3%AAmio%20SENATRAN%202025/Relat%C3%B3rio%20do%20Pr%C3%AAmio%20SENATRAN%202025.pdf?csf=1&web=1&e=PnyN3Q)
 - [Monitoramento dos produtos do Detran-SP](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/3.%20Produ%C3%A7%C3%A3o/2.%20Pnatrans/3.%20Produ%C3%A7%C3%A3o/9.%20Monitoramento%20Produtos%20Detran/COST_DRMLT_Resumo%20Produtos%20Detran%20v.0.0.docx?d=wb3bb59904f1746268ba05a1a224bbb18&csf=1&web=1&e=HZrkUO)
+- [Roadmap Pnatrans v1](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/3.%20Produ%C3%A7%C3%A3o/2.%20Pnatrans/3.%20Produ%C3%A7%C3%A3o/0.%20Fluxo%20Processo%20e%20Padr%C3%B5es/Roadmap/COST_DRMLT_Roadmap%20pnatrans.pdf?csf=1&web=1&e=zwSfrU)
 ### Etapas
 
 - [01/08/2025] Início da coleta de informações com outras áreas do Detran-SP
@@ -236,6 +243,7 @@ Atores envolvidos: #dft #ept #dva #ascom
 - [29/08/2025] 1ª Submissão de produtos ao Painel Pnatrans
 - [15/09/2025] Submissão complementar
 - [31/10/2025] Resposta da DSV ao ofício da Senatran (Processo SEI 140.01106273/2025-28)
+- [08/12/2025] Finalização do Roadmap Pnatrans - v1
 - [09/01/2026] Segunda rodada de submissão de produtos
 
 ## [[Gestão do Infosiga]]
@@ -245,7 +253,7 @@ Descrição: Gestão rotineira do Infosiga, incluindo o registro e solução de 
 Status: Em execução
 Prazo: Release todo dia 15
 Project Manager: #dest
-Atores envolvidos: #bigrs
+Atores envolvidos: #bigrs #dci
 
 ### Documentos
 
@@ -259,6 +267,7 @@ Atores envolvidos: #bigrs
 ### Etapas
 
 - [à definir] Implantação das abas colapsáveis
+- [26/12/2025] Envio dos dados abertos e guia de referência à DCI
 ## [[Convênio FGV]]
 
 Descrição: Convênio de cooperação técnica com a FGV Cidades com o objetivo de executar de estudos envolvendo fatores de riscos em sinistros com motociclistas, análise dos custos de sinistros e qualificação dos dados de boletins de ocorrência.
