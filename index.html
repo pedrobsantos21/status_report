@@ -831,8 +831,8 @@
         
         .calendar-event-description {
             color: #111414;
-            margin-top: 0.8rem;
             font-size: 0.9rem;
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -2562,36 +2562,48 @@
             
             sortedDates.forEach(dateStr => {
                 const events = eventsByDate[dateStr];
-                const eventItem = document.createElement('div');
-                eventItem.className = 'calendar-event-item';
+                
+                const dateContainer = document.createElement('div');
+                dateContainer.className = 'calendar-event-item';
                 
                 const eventDate = document.createElement('div');
                 eventDate.className = 'calendar-event-date';
                 eventDate.textContent = dateStr;
-                eventItem.appendChild(eventDate);
+                dateContainer.appendChild(eventDate);
                 
-                const eventProjects = document.createElement('div');
-                eventProjects.className = 'calendar-event-projects';
+                const eventsByProject = {};
+                events.forEach(event => {
+                    if (!eventsByProject[event.project]) {
+                        eventsByProject[event.project] = [];
+                    }
+                    eventsByProject[event.project].push(event);
+                });
                 
-                const uniqueProjects = [...new Set(events.map(e => e.project))];
-                uniqueProjects.forEach(project => {
-                    const projectBadge = document.createElement('span');
+                Object.keys(eventsByProject).forEach(projectName => {
+                    const projectEvents = eventsByProject[projectName];
+                    
+                    const projectContainer = document.createElement('div');
+                    projectContainer.style.marginBottom = '1.2rem';
+                    
+                    const projectBadge = document.createElement('div');
                     projectBadge.className = 'calendar-event-project';
-                    projectBadge.textContent = project;
-                    eventProjects.appendChild(projectBadge);
+                    projectBadge.textContent = projectName;
+                    projectBadge.style.marginBottom = '0.8rem';
+                    projectContainer.appendChild(projectBadge);
+                    
+                    projectEvents.forEach(event => {
+                        const eventDescription = document.createElement('div');
+                        eventDescription.className = 'calendar-event-description';
+                        eventDescription.textContent = event.description;
+                        eventDescription.style.marginBottom = '0.4rem';
+                        eventDescription.style.paddingLeft = '0.8rem';
+                        projectContainer.appendChild(eventDescription);
+                    });
+                    
+                    dateContainer.appendChild(projectContainer);
                 });
                 
-                eventItem.appendChild(eventProjects);
-                
-                const eventDescriptions = document.createElement('div');
-                eventDescriptions.className = 'calendar-event-description';
-                events.forEach((event, index) => {
-                    if (index > 0) eventDescriptions.appendChild(document.createTextNode(' • '));
-                    eventDescriptions.appendChild(document.createTextNode(event.description));
-                });
-                eventItem.appendChild(eventDescriptions);
-                
-                eventsList.appendChild(eventItem);
+                eventsList.appendChild(dateContainer);
             });
         }
         
@@ -2612,20 +2624,34 @@
                 title.textContent = `Eventos em ${dateStr}`;
                 eventsList.appendChild(title);
                 
+                const eventsByProject = {};
                 dayEvents.forEach(event => {
+                    if (!eventsByProject[event.project]) {
+                        eventsByProject[event.project] = [];
+                    }
+                    eventsByProject[event.project].push(event);
+                });
+                
+                Object.keys(eventsByProject).forEach(projectName => {
+                    const projectEvents = eventsByProject[projectName];
+                    
                     const eventItem = document.createElement('div');
                     eventItem.className = 'calendar-event-item';
                     
-                    const eventProject = document.createElement('div');
-                    eventProject.className = 'calendar-event-project';
-                    eventProject.textContent = event.project;
-                    eventProject.style.marginBottom = '0.8rem';
-                    eventItem.appendChild(eventProject);
+                    const projectBadge = document.createElement('div');
+                    projectBadge.className = 'calendar-event-project';
+                    projectBadge.textContent = projectName;
+                    projectBadge.style.marginBottom = '0.8rem';
+                    eventItem.appendChild(projectBadge);
                     
-                    const eventDescription = document.createElement('div');
-                    eventDescription.className = 'calendar-event-description';
-                    eventDescription.textContent = event.description;
-                    eventItem.appendChild(eventDescription);
+                    projectEvents.forEach(event => {
+                        const eventDescription = document.createElement('div');
+                        eventDescription.className = 'calendar-event-description';
+                        eventDescription.textContent = event.description;
+                        eventDescription.style.marginBottom = '0.4rem';
+                        eventDescription.style.paddingLeft = '0.8rem';
+                        eventItem.appendChild(eventDescription);
+                    });
                     
                     eventsList.appendChild(eventItem);
                 });

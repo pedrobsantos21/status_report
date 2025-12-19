@@ -240,15 +240,21 @@ def generate_html(update_date: str, projects: List[Dict], template_html: str) ->
     projects_html = '\n'.join([generate_project_html(project, i) for i, project in enumerate(projects)])
     
     accordion_start_pattern = r'(<div class="accordion" id="projetosAccordion">)'
-    accordion_end_pattern = r'(</div>\s*</div>\s*<!-- Tab Calendário -->)'
+    accordion_end_patterns = [
+        r'(</div>\s*</div>\s*<!-- Tab Calendário -->)',
+        r'(</div>\s*</div>\s*</div>\s*<!-- Tab Calendário -->)',
+        r'(</div>\s*</div>\s*</div>\s*</div>\s*<!-- Tab Calendário -->)',
+        r'(</div>\s*<!-- Tab Calendário -->)'
+    ]
     
     accordion_start_match = re.search(accordion_start_pattern, template_html)
-    accordion_end_match = re.search(accordion_end_pattern, template_html)
+    accordion_end_match = None
     
-    if not accordion_start_match or not accordion_end_match:
-        print('Aviso: Não foi possível encontrar a seção de projetos. Tentando padrão alternativo...')
-        accordion_end_pattern = r'(</div>\s*</div>\s*</div>\s*<!-- Tab Calendário -->)'
-        accordion_end_match = re.search(accordion_end_pattern, template_html)
+    if accordion_start_match:
+        for pattern in accordion_end_patterns:
+            accordion_end_match = re.search(pattern, template_html)
+            if accordion_end_match:
+                break
     
     if accordion_start_match and accordion_end_match:
         start_pos = accordion_start_match.end()
@@ -260,7 +266,11 @@ def generate_html(update_date: str, projects: List[Dict], template_html: str) ->
             template_html[end_pos:]
         )
     else:
-        print('Aviso: Não foi possível encontrar a seção de projetos. Gerando HTML completo...')
+        if not accordion_start_match:
+            print('Erro: Não foi possível encontrar o início do accordion de projetos.')
+        if not accordion_end_match:
+            print('Erro: Não foi possível encontrar o fim do accordion de projetos.')
+        print('Aviso: Gerando HTML sem substituir a seção de projetos...')
         new_html = template_html
     
     update_date_pattern = r'Data de atualização: [^<]+'
