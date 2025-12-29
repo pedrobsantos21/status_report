@@ -26,7 +26,7 @@ Processo SEI: 140.00201905/2023-12
 Descrição: Prova de Conceito de solução de processamento e inteligência de dados com base nos dados do Infosiga e outras bases correlatas, com objetivo de apoiar na gestão da segurança no Trânsito
 
 Status: Em execução
-Prazo: 16/01/2026
+Prazo: 12/01/2026
 Project Manager: #cost
 Atores envolvidos: #dest #drmlt #deseg #prodesp #bigrs #dti #palantir #volis #aws
 Processo SEI: 140.01201967/2025-78
@@ -44,7 +44,8 @@ Processo SEI: 140.01201967/2025-78
 - [15/12/2025] Ajustes finais
 - [16/12/2025] Reunião presencial de apresentação
 - [17/12/2025] Apresentação do v1 ao Detran-SP
-- [16/01/2026] Apresentação do v2 ao Detran-SP
+- [22/12/2025] Envio das instruções de acesso aos dados do Waze
+- [12/01/2026] Apresentação do v2 ao Detran-SP
 
 
 ## [[RST - Registro de Sinistros de Trânsito]]
@@ -87,9 +88,11 @@ Atores envolvidos: #dest #deseg #bigrs #cist
 
 - [Relatório de metodologia](https://governosp-my.sharepoint.com/:w:/r/personal/marina_silva_detran_sp_gov_br/Documents/Arquivos%20de%20Chat%20do%20Microsoft%20Teams/COST_DRMLT_Monitoramento%20PSV_%20v.0.0.docx?d=w717105a6932f4ee5a3188e76ed314a54&csf=1&web=1&e=3Nv533)
 - [Planilha de monitoramento](https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DRML/3.%20Produ%C3%A7%C3%A3o/1.%20Projetos%20Estrat%C3%A9gicos/1.%20PSV/1.%20Monitoramento/COST_DRMLT_Monitoramento%20PSV_v.0.0.xlsx?d=w4b78d2e2249e4543b83e7a99c4df77dc&csf=1&web=1&e=hftZz0)
+- [Arquivos finais](https://drive.google.com/drive/u/0/folders/18hzOp-_whxzEkap3Z9ATBsmyo2Kpybtc)
 ### Etapas
 
 - [18/12/2025] Criação do procedimento operacional padrão para o monitoramento de indicadores de desempenho e produtos do PSV-SP 
+- [26/12/2025] Finalização da nova versão do PSV-SP, com correções em termos e atualização do diagnóstico
 
 ## [[PRaVida]]
 
@@ -106,14 +109,17 @@ Atores envolvidos: #bigrs #dest #cist
 - [Cronograma PRaVida 1.0](https://governosp.sharepoint.com/:b:/t/DETRAN-CoordenadoriadeSeguranaViria/IQAq1c5XrfX-SanqIRwJm9elAacGfNVniEfgV66rcfbIslc?e=NpbV1v)
 - [Site](https://detran.sp.gov.br/pravida/)
 - [Manual operacional](https://detran.sp.gov.br/pravida/pdf/PRaVida_Manual%20Operacional_v1.pdf)
+- [Mapeamento de riscos](https://docs.google.com/spreadsheets/d/1ykvGchhORZGN3iP40Pt0wtimeAT9pqnaptTE2YAzvGM/edit?usp=sharing)
 ### Etapas
 
 - [05/12/2025] Reunião com a área de negócio (CIST)
 - [11/12/2025] Desenho do fluxo de dados da primeira etapa do PRaVida
 - [15/12/2025] Publicação do edital
 - [18/12/2025] Reunião com a área de negócio - automatização do cálculo da pontuação
+- [07/01/2026] Webinar de dúvidas
 - [15/01/2026] Fim da manifestação de interesse
 - [26/01/2026] Divulgação dos enquadrados e selecionados
+- [07/02/2026] Segundo webinário técnico
 - [13/02/2026] Limite de envios das propostas técnicas do municípios enquadrados (C1 e C3)
 - [13/03/2026] Divulgação das propostas técnicas selecionadas para apoio com recursos financeiros.
 - [02/04/2026] Formalização dos convênios
@@ -150,6 +156,7 @@ Atores envolvidos: #drmlt #dft
 - [CT01 - v0.2](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.07%20Fiscaliza%C3%A7%C3%A3o/02.07.05%20Caderno%20T%C3%A9cnico/Vers%C3%B5es/DESEG_CT01_v0.2.pdf?csf=1&web=1&e=ZS6HrW)
 - [CT01 - v0.3](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.07%20Fiscaliza%C3%A7%C3%A3o/02.07.05%20Caderno%20T%C3%A9cnico/Vers%C3%B5es/DESEG_CT01_v0.3.pdf?csf=1&web=1&e=8BSkBq)
 - [CT01 - v0.4](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.07%20Fiscaliza%C3%A7%C3%A3o/02.07.05%20Caderno%20T%C3%A9cnico/Vers%C3%B5es/DESEG_CT01_v0.4.pdf?csf=1&web=1&e=E02oJR)
+- [CT01 - v0.5] (https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.07%20Fiscaliza%C3%A7%C3%A3o/02.07.05%20Caderno%20T%C3%A9cnico/Vers%C3%B5es/v0.5/DESEG_CT01_v0.5.pdf?csf=1&web=1&e=mehF2K)
 ### Etapas
 
 - [13/10/2025] Diagnóstico de ações
@@ -157,6 +164,7 @@ Atores envolvidos: #drmlt #dft
 - [19/11/2025] Consolidação - Parte 01
 - [12/12/2025] Consolidação - Parte 02
 - [16/12/2025] Envio do v0.4 à CGSV / DSV
+- [23/12/2025] Criação do v0.5 - Inserção dos atores da DFT
 - [05/01/2026] Finalização do v1.0
 
 ## [[Fiscalização - Entrega mensal]]
@@ -189,6 +197,7 @@ Atores envolvidos: #drmlt #deseg #dest #bigrs
 - [Canvas do projeto](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST/08%20Anu%C3%A1rio%20Infosiga/DSEG_CanvasPesquisas_v2.0.pdf?csf=1&web=1&e=YWxcBn)
 - [Cronograma](https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.04%20Infosiga.SP/02.04.03%20Anu%C3%A1rio/COST_Anuario_Kickoff.xlsx?d=w5274ff4eb93b4741ab60c818b9316a33&csf=1&web=1&e=CEV71M)
 - [Controle de produção do conteúdo](https://governosp.sharepoint.com/:x:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.04%20Infosiga.SP/02.04.03%20Anu%C3%A1rio/2%20Processamento/COST_Anuario_Conteudo.xlsx?d=w894d7ec3dac842048317e98bea5f936a&csf=1&web=1&e=doqQEz)
+- [Pasta do conteúdo em produção](https://governosp.sharepoint.com/:f:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.04%20Infosiga.SP/02.04.03%20Anu%C3%A1rio?csf=1&web=1&e=g8KGPg)
 ### Etapas
 
 - [05/12/2025] Reunião de escopo com atores táticos.
@@ -205,8 +214,8 @@ Atores envolvidos: #drmlt #deseg #dest #bigrs
 
 Descrição: Painel com os resultados do questionário de diagnóstico municipal, elaborado com o PowerBI.
 
-Status: Em execução
-Prazo: 19/12/2025
+Status: Finalizado
+Prazo: 22/12/2025
 Project Manager: #dest 
 Atores envolvidos: #cist #dti
 
@@ -219,7 +228,7 @@ Atores envolvidos: #cist #dti
 
 - [04/12/2025] Finalização do Dashboard
 - [05/12/2025] Publicação do Dashboard V01
-- [19/12/2025] Publicação do Dashboard V02
+- [22/12/2025] Publicação do Dashboard V02
 ## [[Gestão do Pnatrans]]
 
 Descrição: Coleta, acompanhamento e submissão de produtos de responsabilidade do Detran-SP ao Painel Pnatrans.
@@ -251,7 +260,7 @@ Atores envolvidos: #dft #ept #dva #ascom
 Descrição: Gestão rotineira do Infosiga, incluindo o registro e solução de issues, tabulação, auditoria e fechamento mensal dos dados.
 
 Status: Em execução
-Prazo: Release todo dia 15
+Prazo: 15/01/2026
 Project Manager: #dest
 Atores envolvidos: #bigrs #dci
 
@@ -263,11 +272,14 @@ Atores envolvidos: #bigrs #dci
 - [Boletins mensais](https://governosp.sharepoint.com/:f:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Infosiga/Boletim_Infosiga?csf=1&web=1&e=hCI5fq)
 - [Resumo executivo - Implantação de seções colapsáveis](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Infosiga/Infosiga%203.0/Desenvolvimento%20abas%20INFOSIGA.docx?d=w7bf2481b9e4f467090b12df9699c3dda&csf=1&web=1&e=ayZeun)
 - [Resumo executivo - Migração do Pentaho](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Infosiga/Infosiga%203.0/ATA%20%E2%80%93%20Reuni%C3%A3o%20Interna%20sobre%20Mitiga%C3%A7%C3%A3o%20de%20Risco%20do%20Pentaho.docx?d=we9727b5deb774c53b2a680e9284d2ce6&csf=1&web=1&e=ng1Zau)
+- [Guia de referência - dados abertos](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Infosiga/Infosiga%203.1/Guia%20de%20refer%C3%AAncia%20-%20dados%20abertos/Guia%20de%20Refer%C3%AAncia%20-%20Dados%20de%20Sinistros%20Infosiga%20-%20v%201.0.pdf?csf=1&web=1&e=B1hTyJ)
+- [Lista de URLs - dados abertos](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Infosiga/Infosiga%203.1/Guia%20de%20refer%C3%AAncia%20-%20dados%20abertos/Links%20das%20planilhas%20-%20Infosiga%20por%20ano%20-%20231225.docx?d=wf05821ab482646678c2a7ad8cf8c6c22&csf=1&web=1&e=gS5znI)
 
 ### Etapas
 
 - [à definir] Implantação das abas colapsáveis
-- [26/12/2025] Envio dos dados abertos e guia de referência à DCI
+- [23/12/2025] Envio dos dados abertos e guia de referência à DCI
+- [15/01/2026] Release com dados de 12/2025
 ## [[Convênio FGV]]
 
 Descrição: Convênio de cooperação técnica com a FGV Cidades com o objetivo de executar de estudos envolvendo fatores de riscos em sinistros com motociclistas, análise dos custos de sinistros e qualificação dos dados de boletins de ocorrência.
@@ -280,6 +292,10 @@ Processo SEI: 140.01233739/2025-67
 ### Documentos
 
 - [Pasta do projeto](https://governosp.sharepoint.com/:f:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/01%20Conv%C3%AAnios%20e%20parcerias/01.02%20FGV%20Cidades?csf=1&web=1&e=RtRxU2)
+
+### Etapas
+
+- [19/12/2025] Retorno da FGV com a nova versão da minuta
 ## [[Convênio EMDEC]]
 
 Descrição: Colaboração técnica entre o Detran-SP e a EMDEC - Empresa Municipal de Desenvolvimento de Campinas para a qualificação dos dados sobre sinistros de trânsito com vítimas fatais no município de Campinas, incluindo a tabulação, validação, complementação, padronização e análise conjunta dos dados
@@ -297,6 +313,8 @@ Processo SEI: 140.01233739/2025-67
 - [04/12/2025] Envio do plano de trabalho pela EMDEC
 - [05/12/2025] Início da inserção da documentação no processo (minuta, plano de trabalho, nota técnica)
 - [15/12/2025] Assinatura da documentação e despacho para a DAL
+- [18/12/2025] Resposta da DGCONV (Pedido de informações e envolvimento da DPD)
+- [19/12/2025] Parecer da DPD sobre o compartilhamento de dados
 
 ## [[Convênio com a SSP-SP]]
 
@@ -357,4 +375,59 @@ Atores envolvidos: #drmlt #deseg #bigrs
 ### Documentos
 
 - [Termo de referência](https://docs.google.com/document/d/1saMvEucoMunvNbKezWGeDhFDK64xiZ3E/edit?usp=sharing&ouid=115524721872365693222&rtpof=true&sd=true)
-- [Mapeamento de projetos em andamento](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DEST/3.%20Produ%C3%A7%C3%A3o/Infosiga/Infosiga%203.1/INFOSIGA%20-%20Status%20projetos.docx?d=w63e6603a6c924f268631a82e9e651652&csf=1&web=1&e=nvbuYS)
+- [Mapeamento de projetos em andamento](https://docs.google.com/document/d/1uNPXx56XCRYHmQLd2rtH2cFnxZJHz3nJ/edit#heading=h.ou7hnqp6hcv8)
+
+## [[Nota Técnica 01 - Análise de Tendência da Sinistralidade em Municípios do Estado de São Paulo]]
+
+Descrição: Criação da nova versão da NT01, considerando a consolidação dos dados de 2025 disponibilizados pelo Infosiga.
+
+Status: Não iniciado
+Prazo: 22/01/2026
+Project Manager: #deseg 
+Atores envolvidos: #dest #drmlt
+
+### Documentos
+
+- [Relatório publicado](https://detran-sp.github.io/tendencia_municipios/)
+- [Repositório no GitHub](https://github.com/Detran-SP/tendencia_municipios/)
+
+### Etapas
+
+- [15/01/2026] Release com os dados consolidados de 2025
+- [22/01/2026] Publicação do V2
+
+## [[Nota Técnica 02 - Estimativa do custo dos sinistros de trânsito no estado de São Paulo - Metodologia de cálculo]]
+
+Descrição: Criação da nova versão da NT02, considerando a consolidação dos dados de 2025 disponibilizados pelo Infosiga.
+
+Status: Não iniciado
+Prazo: 22/01/2026
+Project Manager: #deseg 
+Atores envolvidos: #dest
+
+### Documentos
+
+- [Relatório publicado](https://detran-sp.github.io/custos_sinistros_sp/)
+- [Repositório no GitHub](https://github.com/detran-sp/custos_sinistros_sp)
+
+### Etapas
+
+- [15/01/2026] Release com os dados consolidados de 2025
+- [22/01/2026] Publicação do V2
+
+## [[Convênio BIGRS]]
+
+Descrição: Renovação do convênio de cooperação técnica com a Bloomberg Initiative for Global Road Safety.
+
+Status: Em execução
+Prazo: -
+Project Manager: #dsv 
+Atores envolvidos: #cgsv #cost #cist 
+
+### Documentos
+
+- [Impactos da interrupção do convênio com a BIGRS](https://governosp.sharepoint.com/:w:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/00%20Administrativo/00.00%20Gest%C3%A3o%20Interna/CGSV_BIGRS_Convenio_Resumido.docx?d=wa8d11388a8c7421d94831137aa0fc57f&csf=1&web=1&e=orhmxi)
+
+### Etapas
+
+- [23/12/2025] Envio do documento de impactos à DSV

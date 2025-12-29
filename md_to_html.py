@@ -236,6 +236,20 @@ def read_html_template() -> str:
     with open(html_file, 'r', encoding='utf-8') as f:
         return f.read()
 
+def generate_pm_filters_html(projects: List[Dict]) -> str:
+    pms = set()
+    for project in projects:
+        if project['pm']:
+            pms.add(project['pm'])
+    
+    sorted_pms = sorted(pms)
+    
+    pm_badges = ['<span class="badge filter-badge pm-badge active" data-pm="" data-filter-type="pm">Todos</span>']
+    for pm in sorted_pms:
+        pm_badges.append(f'<span class="badge filter-badge pm-badge" data-pm="{escape(pm)}" data-filter-type="pm">{escape(pm)}</span>')
+    
+    return '\n                        '.join(pm_badges)
+
 def generate_html(update_date: str, projects: List[Dict], template_html: str) -> str:
     projects_html = '\n'.join([generate_project_html(project, i) for i, project in enumerate(projects)])
     
@@ -272,6 +286,20 @@ def generate_html(update_date: str, projects: List[Dict], template_html: str) ->
             print('Erro: Não foi possível encontrar o fim do accordion de projetos.')
         print('Aviso: Gerando HTML sem substituir a seção de projetos...')
         new_html = template_html
+    
+    pm_filters_pattern = r'(<div class="filter-badges-container" id="pmFilters">)([\s\S]*?)(</div>)'
+    pm_filters_match = re.search(pm_filters_pattern, new_html)
+    
+    if pm_filters_match:
+        pm_filters_html = generate_pm_filters_html(projects)
+        new_html = (
+            new_html[:pm_filters_match.start()] +
+            pm_filters_match.group(1) + '\n                        ' + pm_filters_html + '\n                    ' +
+            pm_filters_match.group(3) +
+            new_html[pm_filters_match.end():]
+        )
+    else:
+        print('Aviso: Não foi possível encontrar a seção de filtros de PM para atualizar.')
     
     update_date_pattern = r'Data de atualização: [^<]+'
     new_html = re.sub(update_date_pattern, f'Data de atualização: {update_date}', new_html)
