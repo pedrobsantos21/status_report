@@ -197,6 +197,67 @@
             .allocation-card .badge {
                 width: auto;
             }
+            
+            .calendar-container {
+                padding: 1.6rem;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            
+            .calendar-grid {
+                gap: 0.4rem;
+                min-width: 0;
+            }
+            
+            .calendar-day-header {
+                padding: 0.4rem;
+                font-size: 0.75rem;
+            }
+            
+            .calendar-day {
+                padding: 0.2rem;
+                min-width: 0;
+            }
+            
+            .calendar-day-number {
+                font-size: 0.9rem;
+            }
+            
+            .calendar-day-events {
+                font-size: 0.7rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .calendar-container {
+                padding: 1.2rem;
+            }
+            
+            .calendar-grid {
+                gap: 0.2rem;
+            }
+            
+            .calendar-day-header {
+                padding: 0.3rem;
+                font-size: 0.7rem;
+            }
+            
+            .calendar-day {
+                padding: 0.1rem;
+            }
+            
+            .calendar-day-number {
+                font-size: 0.8rem;
+            }
+            
+            .calendar-day-events {
+                font-size: 0.65rem;
+            }
+            
+            .calendar-month-year {
+                font-size: 1.2rem;
+            }
         }
         
         /* Accordion styles - following .dt-accordion pattern */
@@ -679,6 +740,9 @@
             border: 0.1rem solid #E7E7E7;
             padding: 2.4rem;
             margin-bottom: 2.4rem;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
         
         .calendar-header {
@@ -713,6 +777,9 @@
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 0.8rem;
+            width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
         }
         
         .calendar-day-header {
@@ -735,6 +802,9 @@
             transition: all 0.2s ease;
             background-color: #F9F9F9;
             border: 0.1rem solid transparent;
+            min-width: 0;
+            max-width: 100%;
+            box-sizing: border-box;
         }
         
         .calendar-day:hover {
