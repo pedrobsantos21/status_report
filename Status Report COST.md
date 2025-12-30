@@ -156,7 +156,7 @@ Atores envolvidos: #drmlt #dft
 - [CT01 - v0.2](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.07%20Fiscaliza%C3%A7%C3%A3o/02.07.05%20Caderno%20T%C3%A9cnico/Vers%C3%B5es/DESEG_CT01_v0.2.pdf?csf=1&web=1&e=ZS6HrW)
 - [CT01 - v0.3](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.07%20Fiscaliza%C3%A7%C3%A3o/02.07.05%20Caderno%20T%C3%A9cnico/Vers%C3%B5es/DESEG_CT01_v0.3.pdf?csf=1&web=1&e=8BSkBq)
 - [CT01 - v0.4](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.07%20Fiscaliza%C3%A7%C3%A3o/02.07.05%20Caderno%20T%C3%A9cnico/Vers%C3%B5es/DESEG_CT01_v0.4.pdf?csf=1&web=1&e=E02oJR)
-- [CT01 - v0.5] (https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.07%20Fiscaliza%C3%A7%C3%A3o/02.07.05%20Caderno%20T%C3%A9cnico/Vers%C3%B5es/v0.5/DESEG_CT01_v0.5.pdf?csf=1&web=1&e=mehF2K)
+- [CT01 - v0.5](https://governosp.sharepoint.com/:b:/r/teams/DETRAN-CoordenadoriadeSeguranaViria/Shared%20Documents/DSV-CGSV%20-%20COST%20-%20DSEG/02%20Produ%C3%A7%C3%A3o/02.07%20Fiscaliza%C3%A7%C3%A3o/02.07.05%20Caderno%20T%C3%A9cnico/Vers%C3%B5es/v0.5/DESEG_CT01_v0.5.pdf?csf=1&web=1&e=mehF2K)
 ### Etapas
 
 - [13/10/2025] Diagnóstico de ações
