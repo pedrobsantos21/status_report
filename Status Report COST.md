@@ -46,6 +46,7 @@ Processo SEI: 140.01201967/2025-78
 - [17/12/2025] Apresentação do v1 ao Detran-SP
 - [22/12/2025] Envio das instruções de acesso aos dados do Waze
 - [12/01/2026] Apresentação do v2 ao Detran-SP
+- [06/01/2026] Checkpoint com a Volis
 
 
 ## [[RST - Registro de Sinistros de Trânsito]]
@@ -71,10 +72,11 @@ Processo SEI: 140.01192205/2025-73
 - [04/11/2025] Reunião de trabalho - definição de campos e regras de negócio
 - [06/11/2025] Reunião de trabalho - definição de campos e regras de negócio
 - [01/12/2025] Reunião de trabalho - definição de campos e regras de negócio
-- [05/12/2025] Apresentação do RST à SSP-SP / polívias
+- [05/12/2025] Apresentação do RST à SSP-SP / polícias
 - [10/12/2025] Reunião de trabalho com atores das polícias
 - [16/12/2025] Reunião de trabalho com atores das polícias
 - [18/12/2025] Reunião de trabalho com atores das polícias
+- [07/01/2026] Checkpoint com a Prodesp / DTI / DFT
 
 ## [[Plano de Segurança Viária do Estado de São Paulo]]
 
@@ -140,6 +142,7 @@ Atores envolvidos: #drmlt #dest
 ### Etapas
 
 - [02/12/2025] Levantamento das informações, extrações no sistema da saúde (TABNET)
+- [16/01/2026] Entrega do v01
 
 ## [[Caderno Técnico da Fiscalização]]
 
@@ -253,7 +256,7 @@ Atores envolvidos: #dft #ept #dva #ascom
 - [15/09/2025] Submissão complementar
 - [31/10/2025] Resposta da DSV ao ofício da Senatran (Processo SEI 140.01106273/2025-28)
 - [08/12/2025] Finalização do Roadmap Pnatrans - v1
-- [09/01/2026] Segunda rodada de submissão de produtos
+- [16/01/2026] Segunda rodada de submissão de produtos
 
 ## [[Gestão do Infosiga]]
 
@@ -315,6 +318,7 @@ Processo SEI: 140.01233739/2025-67
 - [15/12/2025] Assinatura da documentação e despacho para a DAL
 - [18/12/2025] Resposta da DGCONV (Pedido de informações e envolvimento da DPD)
 - [19/12/2025] Parecer da DPD sobre o compartilhamento de dados
+- [06/01/2026] Reunião com a DPD
 
 ## [[Convênio com a SSP-SP]]
 
@@ -394,7 +398,7 @@ Atores envolvidos: #dest #drmlt
 ### Etapas
 
 - [15/01/2026] Release com os dados consolidados de 2025
-- [22/01/2026] Publicação do V2
+- [22/01/2026] Finalização do v2
 
 ## [[Nota Técnica 02 - Estimativa do custo dos sinistros de trânsito no estado de São Paulo - Metodologia de cálculo]]
 
@@ -413,7 +417,7 @@ Atores envolvidos: #dest
 ### Etapas
 
 - [15/01/2026] Release com os dados consolidados de 2025
-- [22/01/2026] Publicação do V2
+- [22/01/2026] Finalização do v2
 
 ## [[Convênio BIGRS]]
 
